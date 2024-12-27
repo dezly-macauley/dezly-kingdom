@@ -29,8 +29,8 @@ _______________________________________________________________________________
 ### Step 2 - Make the installation script executable and run it
 
 ```
-cd ~/.dezly-kingdom
-chmod +x install_dezly_kingdom.sh
+chmod +x ~/.dezly-kingdom/install_dezly_kingdom.sh
+chmod +x ~/.dezly-kingdom/scripts/*.sh
 ./install_dezly_kingdom.sh
 ```
 
