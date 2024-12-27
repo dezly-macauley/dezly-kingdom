@@ -6,4 +6,5 @@ echo "Welcome to the Dezly Kingdom Installer"
 # and then upgrade any outdated software before installing Dezly Kingdom
 sudo pacman -Syu
 
+# Setup Rust
 ./scripts/rust.sh
