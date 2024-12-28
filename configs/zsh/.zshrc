@@ -51,6 +51,8 @@ alias battery-life="acpi"
 alias bright-lowest="brightnessctl set 1%"
 alias bright-10="brightnessctl set 10%"
 alias bright-25="brightnessctl set 25%"
+alias bright-highest="brightnessctl set 100%"
+
 #______________________________________________________________________________
 # SECTION: ZSH Autocompletion 
 
