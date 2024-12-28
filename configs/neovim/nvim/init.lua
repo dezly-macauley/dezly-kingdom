@@ -130,7 +130,7 @@ vim.opt.clipboard = "unnamedplus"
 -------------------------------------------------------------------------------
 -- This is how to make a single line comment in Lua
 -- Since this message is init.lua, it will show up at the bottom of the editor
-print("Neovim is the best")
+-- print("Neovim is the best")
 
 -- To view this message in Neovim
 -- `:messages`
@@ -139,7 +139,7 @@ print("Neovim is the best")
 -- SECTION: How to execute a line of lua code
 
 -- E.g. To execute a line of lua code do this:
-print("Dezly Kingdom")
+-- print("Dezly Kingdom")
 
 -- Move your cursor to the line `print("Dezly Kingdom")
 -- Select the line by pressing `V` (captital letter)
@@ -167,7 +167,7 @@ function greetKing()
 end
 
 -- Call the function
-greetKing()
+-- greetKing()
 
 -- You can also call this function from Neovim:
 -- `:lua greetKing()`
