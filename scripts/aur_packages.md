@@ -30,3 +30,8 @@ sudo systemctl enable --now auto-cpufreq.service
 paru -Syu
 
 #______________________________________________________________________________
+# SQLite
+
+# paru -S litecli (Don't install this just yet)
+
+#______________________________________________________________________________
