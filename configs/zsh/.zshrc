@@ -11,6 +11,7 @@ SAVEHIST=9000
 function update_dezly_kingdom() {
 	update_dezly_kingdom_git
 	update_dezly_kingdom_zsh
+	update_dezly_kingdom_hyprland
 	update_dezly_kingdom_neovim
 	echo "Your kingdom has been updated"
 }
@@ -29,6 +30,11 @@ function update_dezly_kingdom_zsh() {
 	cp ~/.zshrc ~/.dezly-kingdom/configs/zsh
 }
 
+# Update only the Hyprland configuration
+function update_dezly_kingdom_hyprland() {
+	rm -rf ~/.dezly-kingdom/configs/hyprland/hypr
+	cp -r ~/.config/hypr ~/.dezly-kingdom/configs/hyprland
+}
 
 # Update only the Neovim configuration
 function update_dezly_kingdom_neovim() {
