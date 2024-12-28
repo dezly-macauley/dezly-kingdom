@@ -30,6 +30,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 #______________________________________________________________________________
 # SECTION: Programming Languages
 ./scripts/python_setup.sh
+./scripts/lua_setup.sh
 
 #______________________________________________________________________________
 echo " "
