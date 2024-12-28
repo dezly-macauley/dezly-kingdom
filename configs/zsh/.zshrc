@@ -12,6 +12,7 @@ function update_dezly_kingdom() {
 	update_dezly_kingdom_git
 	update_dezly_kingdom_zsh
 	update_dezly_kingdom_neovim
+	echo "Your kingdom has been updated"
 }
 
 
