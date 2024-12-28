@@ -1,0 +1,7 @@
+[user]
+	name = dezly-macauley
+	email = dezlymacauley@proton.me
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
