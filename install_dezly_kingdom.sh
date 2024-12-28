@@ -8,3 +8,9 @@ sudo pacman -Syu
 
 # Setup Rust
 ./scripts/rust.sh
+
+# Setup Audio
+./scripts/audio_setup.sh
+
+# Setup Terminal
+./scripts/terminal_setup.sh
