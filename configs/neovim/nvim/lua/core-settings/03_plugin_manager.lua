@@ -1,4 +1,4 @@
--- Bootstrap lazy.nvim
+-- SECTION: Install lazy.nvim if it is not installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -13,16 +13,29 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
   end
 end
+
+-- This will add lazy.nvim to Neovim's runtime path
+-- After installing this, and re-opening Neovim,
+-- you should see that lazy.nvim has been added to your runtime path
+-- by running the following command:
+-- `:e echo nvim_list_runtime_paths()`
 vim.opt.rtp:prepend(lazypath)
+
+-- You can also run this command to check that the plugin manager
+-- has everything needed to do its job:
+-- `:checkhealth lazy`
 
 -------------------------------------------------------------------------------
 -- Setup lazy.nvim
-require("lazy").setup({})
+require("lazy").setup({
 
-  -- spec = {
-  --   -- List
-  --   { import = "plugins" },
-  --
-  -- }
+  spec = {
+    -- List
+    { import = "neovim-plugins.themes" },
+
+  }
+
+})
+
 
 -------------------------------------------------------------------------------

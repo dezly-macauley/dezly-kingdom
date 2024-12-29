@@ -137,6 +137,21 @@ require("core-settings.03_plugin_manager")
 -- `:q!` This will quit Neovim WITHOUT saving your changes
 
 -------------------------------------------------------------------------------
+-- NOTE: How to open a file using Command Mode
+
+--[[
+
+    :e enter-the-relative-file-path
+
+    E.g. If I was already in ~/.config/nvim, then I can do this
+    :e init.lua 
+
+    To check what directory you are currently in:
+    :pwd
+    
+]]
+
+-------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------
