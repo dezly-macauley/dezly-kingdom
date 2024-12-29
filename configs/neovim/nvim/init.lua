@@ -1,3 +1,19 @@
+-- This will load the file 
+-- ~/.config/nvim/lua/core-settings/01_leader_key.lua
+
+-- NOTE: How to enter filepaths when using require
+
+-- Neovim automatically adds the ~/.config/nvim/lua 
+-- directory to Lua's package search path. When you use require(), 
+-- it specifically looks for modules in directories named lua/ within 
+-- Neovim's runtime path. This is why you don't need to include "lua" 
+-- in the require path - Neovim has already set this up for you.
+
+require("core-settings.01_leader_key")
+require("core-settings.02_neovim_options")
+require("core-settings.03_plugin_manager")
+
+-------------------------------------------------------------------------------
 -- SECTION: Neovim Configuration File Structure
 
 -- NOTE: init.lua
@@ -122,10 +138,6 @@
 
 -------------------------------------------------------------------------------
 
--- This will sync Neovim with your system clipboard,
--- so that it is easy to copy and paste things into Neovim, 
--- and out of Neovim as well.
-vim.opt.clipboard = "unnamedplus"
 
 -------------------------------------------------------------------------------
 -- This is how to make a single line comment in Lua
@@ -182,11 +194,5 @@ end
 
 -- `%` means `this current file`
 -- :so %
-
--------------------------------------------------------------------------------
--- SECTION: Neovim Options
-
--- Four space indentation
-vim.opt.shiftwidth = 4
 
 -------------------------------------------------------------------------------
