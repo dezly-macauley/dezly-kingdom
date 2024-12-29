@@ -12,6 +12,12 @@ sudo pacman -S --needed zsh-autosuggestions
 # Shell Prompt Appearance
 sudo pacman -S --needed starship
 
+# My Nerd Font of choice
+sudo pacman -S --needed ttf-meslo-nerd
+
+# Use Starship Nerd Font Preset
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+
 # Output Appearance
 sudo pacman -S --needed lsd
 sudo pacman -S --needed tree

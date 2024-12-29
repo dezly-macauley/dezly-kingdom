@@ -1,5 +1,5 @@
 
--- number 
+-- integer
 local number_of_cats = 7
 
 -- string

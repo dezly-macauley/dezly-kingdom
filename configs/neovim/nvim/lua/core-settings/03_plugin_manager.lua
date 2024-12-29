@@ -30,9 +30,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
   spec = {
-    -- List
-    { import = "neovim-plugins.themes" },
-
+    -- List the directories in `neovim-plugins`
+    { import = "neovim-plugins.editor-themes" },
+    { import = "neovim-plugins.visual-guides" },
+    { import = "neovim-plugins.language-support" },
+    { import = "neovim-plugins.navigation-tools" },
   }
 
 })
