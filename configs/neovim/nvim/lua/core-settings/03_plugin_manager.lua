@@ -29,13 +29,14 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 
-  spec = {
-    -- List the directories in `neovim-plugins`
-    { import = "neovim-plugins.editor-themes" },
-    { import = "neovim-plugins.visual-guides" },
-    { import = "neovim-plugins.language-support" },
-    { import = "neovim-plugins.navigation-tools" },
-  }
+    spec = {
+	-- List the directories in `neovim-plugins
+	{ import = "neovim-plugins.editor-themes" },
+	{ import = "neovim-plugins.visual-guides" },
+	{ import = "neovim-plugins.language-support" },
+	{ import = "neovim-plugins.completion-assist" },
+	{ import = "neovim-plugins.navigation-tools" },
+    }
 
 })
 
