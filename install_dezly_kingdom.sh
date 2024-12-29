@@ -6,6 +6,10 @@ echo "Welcome to the Dezly Kingdom Installer"
 
 # This will update the Arch package manager,
 # and then upgrade any outdated software before installing Dezly Kingdom
+
+# NOTE: Turn the next line into a comment after installing Dezly Kingdom 
+# if you don't want to perform a full system upgrade each time you install
+# something
 # sudo pacman -Syu
 
 #______________________________________________________________________________

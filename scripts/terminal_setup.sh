@@ -19,7 +19,8 @@ sudo pacman -S --needed tree
 #______________________________________________________________________________
 # SUB_SECTION: Terminal
 
-# Terminal Emulator
+# Terminal Emulators
+sudo pacman -S --needed ghostty
 sudo pacman -S --needed kitty
 
 # A terminal workspace written in Rust
