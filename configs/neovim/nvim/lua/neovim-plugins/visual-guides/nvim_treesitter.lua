@@ -45,7 +45,7 @@ return {
 			"sql",
 
 			-- Data Serialization 
-			"json", "toml",
+			"json", "toml", "gomod",
 
 			-------------------------------------------------------
 			-- Scripting
