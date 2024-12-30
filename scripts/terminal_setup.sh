@@ -41,4 +41,14 @@ sudo pacman -S --needed yazi
 # My primary code editor
 sudo pacman -S --needed neovim
 
+# This is a search tool that is used by the Neovim plugin `telescope nvim`
+sudo pacman -S --needed ripgrep
+
+# This is a search tool that is used by the Neovim plugin `telescope nvim`
+sudo pacman -S --needed fd 
+
+# This is needed to build this plugin which is a dependecy of:
+# `nvim-telescope/telescope-fzf-native.nvim`
+sudo pacman -S --needed clang
+
 #______________________________________________________________________________

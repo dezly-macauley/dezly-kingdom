@@ -13,13 +13,17 @@ echo "Welcome to the Dezly Kingdom Installer"
 # sudo pacman -Syu
 
 #______________________________________________________________________________
-# SECTION: Rust
+# SECTION: Programming Languages
 
 # Rust should be the first thing that should be installed and properly setup, 
 # because many programs in Dezly Kingdom depend on Rust,
 # or need to be installed from the AUR (Arch User Repository) 
 # using the AUR Helper Paru (Which has to be built from source using Rust)
 ./scripts/rust_setup.sh
+
+./scripts/python_setup.sh
+./scripts/lua_setup.sh
+./scripts/javascript_ecosystem_setup.sh
 
 #______________________________________________________________________________
 # SECTION: Core Essentials
@@ -31,11 +35,6 @@ echo "Welcome to the Dezly Kingdom Installer"
 
 # Setup SQLite
 ./scripts/sqlite_setup.sh
-#______________________________________________________________________________
-# SECTION: Programming Languages
-./scripts/python_setup.sh
-./scripts/lua_setup.sh
-
 #______________________________________________________________________________
 echo " "
 echo "Dezly Kingdom has been installed"
