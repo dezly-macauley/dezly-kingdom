@@ -15,7 +15,7 @@ return {
 		view_options = {
 		    show_hidden = false
 		},
-		
+
 		-- I only want to Enter as a keymap
 		use_default_keymaps = false,
 		keymaps = {

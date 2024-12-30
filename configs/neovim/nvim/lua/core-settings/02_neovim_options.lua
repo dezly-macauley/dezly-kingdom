@@ -8,4 +8,10 @@ vim.opt.clipboard = "unnamedplus"
 -- Four space indentation
 vim.opt.shiftwidth = 4
 
+-- When using the command `:new`, Horizontal splits open below
+vim.opt.splitbelow = true
+
+-- When using the command `:vnew`, Vertical splits open on the right
+vim.opt.splitright = true
+
 -------------------------------------------------------------------------------

@@ -1,5 +1,3 @@
--- This will load the file 
--- ~/.config/nvim/lua/core-settings/01_leader_key.lua
 
 -- NOTE: How to enter filepaths when using require
 
