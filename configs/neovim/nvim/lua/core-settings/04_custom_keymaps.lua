@@ -6,6 +6,14 @@ local kms = vim.keymap.set
 -- kms("n", "grr", vim.lsp.buf.references)
 
 -------------------------------------------------------------------------------
+-- Buffer = The in-memory text of a file
+
+-- A Window = A viewport of a buffer
+-- You can have several windows viewing the same buffer
+
+-- A tab is a collection of buffers
+
+-------------------------------------------------------------------------------
 
 -- SECTION: Custom Keymaps For Plugins
 -------------------------------------------------------------------------------
