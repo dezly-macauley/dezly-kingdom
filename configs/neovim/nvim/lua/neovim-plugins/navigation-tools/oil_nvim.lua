@@ -11,6 +11,14 @@ return {
 	config = function()
 	    require("oil").setup({
 
+		-- When a file is deleted, it will be sent
+		-- to the trash instead of being immediately
+		-- deleted.
+
+		-- NOTE: When a file is deleted it goes to 
+		-- `.local/share/Trash`
+		delete_to_trash = true,
+
 		-- Show files and directories that start with "."
 		view_options = {
 		    show_hidden = false
