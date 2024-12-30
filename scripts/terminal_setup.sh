@@ -52,3 +52,7 @@ sudo pacman -S --needed fd
 sudo pacman -S --needed clang
 
 #______________________________________________________________________________
+# Language support for bash
+sudo pacman -S --needed bash-language-server
+
+#______________________________________________________________________________

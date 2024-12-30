@@ -19,15 +19,19 @@ return {
 
 		    -- NOTE: Check this link for a list of supported languages
 		    -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
-		    ensure_installed = { 
+		    ensure_installed = {
 
 			-------------------------------------------------------
 			-- Low-Level Systems Programming
-			"rust", "zig", "c",
+			"rust", "zig", "c", "cpp",
 
 			-------------------------------------------------------
 			-- AI and Web3
-			"python",
+			"python", "solidity",
+
+			-------------------------------------------------------
+			-- Back-End Development	
+			"go",
 
 			-------------------------------------------------------
 			-- Front-End Development
@@ -42,14 +46,14 @@ return {
 
 			-- Data Serialization 
 			"json", "toml",
-			
+
 			-------------------------------------------------------
 			-- Scripting
 			"bash", "lua",
 
 			-------------------------------------------------------
 			-- Documentation
-			"markdown", "markdown_inline" 
+			"markdown", "markdown_inline"
 
 			-------------------------------------------------------
 
