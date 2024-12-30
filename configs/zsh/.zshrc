@@ -47,6 +47,7 @@ function update_dezly_kingdom_neovim() {
 alias config-git="cd ~ && nvim .gitconfig"
 alias config-zsh="cd ~ && nvim .zshrc"
 alias config-neovim="cd ~/.config/nvim && nvim init.lua"
+alias config-hyprland="cd ~/.config/hypr/ && nvim hyprland.conf"
 
 alias kingdom="cd ~/.dezly-kingdom"
 
