@@ -1,4 +1,3 @@
-
 -- NOTE: How to enter filepaths when using require
 
 -- Neovim automatically adds the ~/.config/nvim/lua 

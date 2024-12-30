@@ -16,7 +16,7 @@ return {
 		-- for the plugin to work.
 		-- This area is for overwritting the default settings,
 		-- or when you want to explicitly add a setting.
-		style = "deep", 
+		style = "deep",
 		transparent = true, 
 
 	    })

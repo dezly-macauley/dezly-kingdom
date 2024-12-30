@@ -14,4 +14,6 @@ vim.opt.splitbelow = true
 -- When using the command `:vnew`, Vertical splits open on the right
 vim.opt.splitright = true
 
+vim.opt.colorcolumn = "80"
+
 -------------------------------------------------------------------------------
