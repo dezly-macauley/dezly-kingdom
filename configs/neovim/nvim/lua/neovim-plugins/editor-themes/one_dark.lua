@@ -17,7 +17,7 @@ return {
 		-- This area is for overwritting the default settings,
 		-- or when you want to explicitly add a setting.
 		style = "deep",
-		transparent = true, 
+		transparent = true,
 
 	    })
 
