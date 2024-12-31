@@ -51,12 +51,11 @@ keymap(
     { desc = "[f]ile [n]ext"}
 )
 
--- space, fc
 keymap(
     "n",
-    "<leader>k",
+    "<leader>c",
     ":bd<CR>",
-    { desc = "[f]ile [c]lose" }
+    { desc = "[c]lose buffer" }
 )
 
 -------------------------------------------------------------------------------

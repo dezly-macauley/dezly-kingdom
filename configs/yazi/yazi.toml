@@ -22,12 +22,23 @@ vlc = [
     { run = 'vlc "$@"', orphan = true, for = "unix" }
 ]
 
+viewnior = [
+    # This will launch VLC to open media files
+    { run = 'viewnior "$@"', orphan = true, for = "unix" }
+]
+
 # This is where you define what programs yazi 
 # should use to open certain file types
 [open]
 rules = [
+    # Text Files
     { name = "*.md", use = "nvim" },
-    { name = "*.mp4", use = "vlc" }
+
+    # Video Files
+    { name = "*.mp4", use = "vlc" },
+
+    # Image Files
+    { name = "*.png", use = "viewnior" }
 ]
 
 #______________________________________________________________________________
