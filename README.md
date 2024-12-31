@@ -1,4 +1,4 @@
-# Dezly Kingdom 
+# 🏰 Dezly Kingdom 
 _______________________________________________________________________________
 ## About
 
@@ -33,5 +33,9 @@ chmod +x ~/.dezly-kingdom/install_dezly_kingdom.sh
 chmod +x ~/.dezly-kingdom/scripts/*.sh
 ./install_dezly_kingdom.sh
 ```
+
+_______________________________________________________________________________
+## Technologies Used
+
 
 _______________________________________________________________________________
