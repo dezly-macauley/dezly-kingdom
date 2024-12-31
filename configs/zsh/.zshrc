@@ -7,8 +7,13 @@ SAVEHIST=9000
 #______________________________________________________________________________
 # SECTION: Adding Directories To shell path
 
-# This where Rust programs that are installed on a system wide level will go
+# This where Rust programs that are installed and need to be available
+# system-wide will go
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# This where npm packages (JavaScript ecosystem) 
+# that are installed and need to be available system-wide will go
+export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
 
 #______________________________________________________________________________
 # SECTION: Update Dezly Kingdom Configurations
@@ -59,6 +64,7 @@ alias kingdom="cd ~/.dezly-kingdom"
 
 alias tree="tree --gitignore"  
 alias ls="lsd"
+alias date-time='echo "⌚ $(date +"%A, %d %B %Y ( %I:%M:%S %p )")"'
 
 alias battery-life="acpi"
 
@@ -67,6 +73,27 @@ alias bright-10="brightnessctl set 10%"
 alias bright-25="brightnessctl set 25%"
 alias bright-half="brightnessctl set 50%"
 alias bright-highest="brightnessctl set 100%"
+
+# internet management
+alias wifi-on="nmcli radio wifi on"
+alias flight-mode="nmcli radio all off"
+
+#______________________________________________________________________________
+# SECTION: Zsh commands
+
+alias reload-shell="exec zsh"
+
+shell_history_clear() {
+    cat /dev/null > ~/.zsh_history && \
+    rm -f ~/.zsh_history && \
+    touch ~/.zsh_history && \
+    exec zsh
+}
+
+shell_history_disable() {
+    unset HISTFILE
+    export HISTSIZE=0
+}
 
 #______________________________________________________________________________
 # SECTION: ZSH Autocompletion 

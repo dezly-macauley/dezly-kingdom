@@ -45,6 +45,10 @@ echo "Welcome to the Dezly Kingdom Installer"
 
 # Setup SQLite
 ./scripts/sqlite_setup.sh
+
+# Setup PostgreSQL
+./scripts/postgresql_setup.sh
+
 #______________________________________________________________________________
 echo " "
 echo "Dezly Kingdom has been installed"
