@@ -37,6 +37,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 # SECTION: Core Essentials
 ./scripts/fonts_setup.sh
 ./scripts/audio_setup.sh
+./scripts/image_setup.sh
 ./scripts/terminal_setup.sh
 ./scripts/graphical_user_interface.sh
 
