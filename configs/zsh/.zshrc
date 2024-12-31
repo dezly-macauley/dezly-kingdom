@@ -22,11 +22,11 @@ export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
 function update_dezly_kingdom() {
 	update_dezly_kingdom_git
 	update_dezly_kingdom_zsh
-	update_dezly_kingdom_hyprland
 	update_dezly_kingdom_neovim
+	update_dezly_kingdom_yazi
+	update_dezly_kingdom_hyprland
 	echo "Your kingdom has been updated"
 }
-
 
 # Update only the Git configuration
 function update_dezly_kingdom_git() {
@@ -34,17 +34,10 @@ function update_dezly_kingdom_git() {
 	cp ~/.gitconfig ~/.dezly-kingdom/configs/git
 }
 
-
 # Update only the Zsh configuration
 function update_dezly_kingdom_zsh() {
 	rm ~/.dezly-kingdom/configs/zsh/.zshrc
 	cp ~/.zshrc ~/.dezly-kingdom/configs/zsh
-}
-
-# Update only the Hyprland configuration
-function update_dezly_kingdom_hyprland() {
-	rm -rf ~/.dezly-kingdom/configs/hyprland/hypr
-	cp -r ~/.config/hypr ~/.dezly-kingdom/configs/hyprland
 }
 
 # Update only the Neovim configuration
@@ -53,11 +46,24 @@ function update_dezly_kingdom_neovim() {
 	cp -r ~/.config/nvim ~/.dezly-kingdom/configs/neovim
 }
 
+# Update only the Yazi configuration
+function update_dezly_kingdom_yazi() {
+	rm -rf ~/.dezly-kingdom/configs/yazi/
+	cp -r ~/.config/yazi/ ~/.dezly-kingdom/configs
+}
+
+# Update only the Hyprland configuration
+function update_dezly_kingdom_hyprland() {
+	rm -rf ~/.dezly-kingdom/configs/hyprland/hypr
+	cp -r ~/.config/hypr ~/.dezly-kingdom/configs/hyprland
+}
+
 #______________________________________________________________________________
 
 alias config-git="cd ~ && nvim .gitconfig"
 alias config-zsh="cd ~ && nvim .zshrc"
 alias config-neovim="cd ~/.config/nvim && nvim init.lua"
+alias config-yazi="cd ~/.config/yazi/ && nvim yazi.toml"
 alias config-hyprland="cd ~/.config/hypr/ && nvim hyprland.conf"
 
 alias kingdom="cd ~/.dezly-kingdom"
