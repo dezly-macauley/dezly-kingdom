@@ -4,7 +4,9 @@
 -- To use Tutor
 -- `:Tutor`
 -- Last lesson = `Lesson 2.7: The undo command`
-
+-------------------------------------------------------------------------------
+-- Count, Operator, Motion
+-- E.g. 3dw = perform this action 3 times: delete word
 -------------------------------------------------------------------------------
 -- SUB_SECTION: Normal Mode
 -- This is the mode that Neovim starts fo by default

@@ -13,6 +13,11 @@ echo "Welcome to the Dezly Kingdom Installer"
 # sudo pacman -Syu
 
 #______________________________________________________________________________
+# SECTION: Version Control
+
+./scripts/version_control.sh
+
+#______________________________________________________________________________
 # SECTION: Programming Languages
 
 # Rust should be the first thing that should be installed and properly setup, 
@@ -33,6 +38,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./scripts/fonts_setup.sh
 ./scripts/audio_setup.sh
 ./scripts/terminal_setup.sh
+./scripts/graphical_user_interface.sh
 
 #______________________________________________________________________________
 # SECTION: Database Management

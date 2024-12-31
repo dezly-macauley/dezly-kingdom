@@ -5,6 +5,12 @@ HISTSIZE=9000
 SAVEHIST=9000
 
 #______________________________________________________________________________
+# SECTION: Adding Directories To shell path
+
+# This where Rust programs that are installed on a system wide level will go
+export PATH="$HOME/.cargo/bin:$PATH"
+
+#______________________________________________________________________________
 # SECTION: Update Dezly Kingdom Configurations
 
 # Update the entire configuration
