@@ -32,8 +32,7 @@ Since `Dezly Kingdom` uses `Hyprland` you may have issues due
 to the propriety nature of Nvidia drivers.
 
 Visit this link if you are having any issues
-[Hyprland - Nvidia](https://wiki.hyprland/NVIDIA/)
-
+[Hyprland - Nvidia](https://wiki.hyprland.org/NVIDIA/)
 _______________________________________________________________________________
 
 ## How to install `Dezly Kingdom`
