@@ -6,7 +6,7 @@ greet_user("Dezly")
 -------------------------------------------------------------------------------
 -- SECTION: Functions that return multiple values
 
-function buy_weapon_pack()
+local function buy_weapon_pack()
     return 15, 29, 38
 end
 

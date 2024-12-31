@@ -4,8 +4,22 @@
 -- and out of Neovim as well.
 vim.opt.clipboard = "unnamedplus"
 
+-------------------------------------------------------------------------------
+
 -- Four space indentation
 vim.opt.shiftwidth = 4
+
+-- When you press the Tab key, it will use s[]
+-- vim.opt.expandtab = true
+
+-- One tab equals 4 spaces
+-- vim.opt.tabstop = 4
+
+-- When you are in insert mode, pressing the Tab key will add 4 spaces,
+-- and pressing the backspace key will remove 4 spaces
+-- vim.opt.softtabstop = 4
+
+-------------------------------------------------------------------------------
 
 -- When using the command `:new`, Horizontal splits open below
 vim.opt.splitbelow = true
@@ -82,5 +96,5 @@ vim.opt.scrolloff = 6
 -- This will ensure that the status line at the bottom remains as one line
 -- It prevents the status line from displaying twice,
 -- when you dividing the screen into multiple windows
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 -------------------------------------------------------------------------------
