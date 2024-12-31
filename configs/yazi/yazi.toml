@@ -1,2 +1,33 @@
+#______________________________________________________________________________
+# This controls general settings for the file manager
 [manager]
+
+# Show hidden files
 show_hidden = true
+
+#______________________________________________________________________________
+
+# This is where you list programs that can open files
+[opener]
+nvim = [
+    # This will open a new kitty terminal and then, 
+    # use Neovim to open the file
+    # `ophan = true` just means that the program should 
+    # open in a separate terminal.
+    { run = 'kitty nvim "$@"', orphan = true, for = "unix" }
+]
+
+vlc = [
+    # This will launch VLC to open media files
+    { run = 'vlc "$@"', orphan = true, for = "unix" }
+]
+
+# This is where you define what programs yazi 
+# should use to open certain file types
+[open]
+rules = [
+    { name = "*.md", use = "nvim" },
+    { name = "*.mp4", use = "vlc" }
+]
+
+#______________________________________________________________________________
