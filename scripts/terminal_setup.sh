@@ -9,9 +9,6 @@ sudo pacman -S --needed zsh
 sudo pacman -S --needed zsh-syntax-highlighting
 sudo pacman -S --needed zsh-autosuggestions
 
-# Change shell to zsh
-chsh -s /usr/bin/zsh
-
 # Shell Prompt Appearance
 sudo pacman -S --needed starship
 

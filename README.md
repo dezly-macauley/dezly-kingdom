@@ -56,6 +56,14 @@ chmod +x ~/.dezly-kingdom/scripts/*.sh
 _______________________________________________________________________________
 ### Post Installational Maintenance
 
+
+# Change shell to zsh (Reboot your system to apply the changes)
+
+```
+chsh -s /usr/bin/zsh
+```
+_______________________________________________________________________________
+
 To view a list of all installed programs
 ```
 pacman -Qe
