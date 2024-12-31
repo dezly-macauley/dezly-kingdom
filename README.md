@@ -56,26 +56,31 @@ chmod +x ~/.dezly-kingdom/scripts/*.sh
 _______________________________________________________________________________
 ### Post Installational Maintenance
 
-
-# Change shell to zsh (Reboot your system to apply the changes)
-
-```
-chsh -s /usr/bin/zsh
-```
-_______________________________________________________________________________
-
-To view a list of all installed programs
+#### To view a list of all installed programs
 ```
 pacman -Qe
 ```
 
-To update all packages that pacman installed on the system
+_______________________________________________________________________________
+#### To update all packages that pacman (The Arch Linux package manager)
+installed on the system:
 ```
 sudo pacman -Syu
 ```
-
-To update all packages that paru installed on the system
+_______________________________________________________________________________
+#### To update all packages that paru (Arch User Repository) 
+installed on the system:
 ```
 paru -Syu
+```
+_______________________________________________________________________________
+#### To update all packages that cargo (Rust) installed on the system:
+```
+???
+```
+_______________________________________________________________________________
+#### To update all packages that npm (JavaScript) installed on the system:
+```
+npm update -g
 ```
 _______________________________________________________________________________

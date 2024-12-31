@@ -9,6 +9,20 @@ sudo pacman -S --needed zsh
 sudo pacman -S --needed zsh-syntax-highlighting
 sudo pacman -S --needed zsh-autosuggestions
 
+# This will check what the current shell is set to
+current_shell="$SHELL"
+
+# This will change the current shell to zsh if the shell is not
+# already zsh
+if [ "$current_shell" != "/usr/bin/zsh" ]; then
+    sudo chsh -s /usr/bin/zsh
+    echo "The current shell has been changed to zsh"
+else
+    echo " "
+    echo "The current shell is already Zsh. No changes made."
+    echo " "
+fi
+
 # Shell Prompt Appearance
 sudo pacman -S --needed starship
 

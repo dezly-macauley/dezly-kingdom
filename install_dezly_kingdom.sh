@@ -48,5 +48,5 @@ echo "Welcome to the Dezly Kingdom Installer"
 #______________________________________________________________________________
 echo " "
 echo "Dezly Kingdom has been installed"
-
+echo "Please reboot your system if this is your first install"
 #______________________________________________________________________________
