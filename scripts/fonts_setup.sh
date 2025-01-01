@@ -14,3 +14,16 @@
 sudo pacman -S --needed ttf-meslo-nerd
 
 sudo pacman -S --needed noto-fonts
+
+# Without this package Emoji wiil not be displayed correctly.
+# after this package has been installed by this script,
+# you should be able to see the crown and castle emojis on this line 👑 🏰
+sudo pacman -S --needed noto-fonts-emoji 
+
+sudo pacman -S --needed noto-fonts-cjk
+# This is needed to display Chinese, Japanese, and Korean characters
+# after this package has been installed by this script,
+# You should be able to see the name of my favorite character in Fate Zero:
+# The King Of Heroes: 
+# Gilgamesh (ギルガメッシュ, Girugamesshu),
+# Class Name Archer (アーチャー, Āchā),

@@ -20,42 +20,55 @@ export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
 
 # Update the entire configuration
 function update_dezly_kingdom() {
-	update_dezly_kingdom_git
-	update_dezly_kingdom_zsh
-	update_dezly_kingdom_neovim
-	update_dezly_kingdom_yazi
-	update_dezly_kingdom_hyprland
-	echo "Your kingdom has been updated"
+    update_dezly_kingdom_git
+    update_dezly_kingdom_zsh
+    update_dezly_kingdom_neovim
+    update_dezly_kingdom_yazi
+    update_dezly_kingdom_ghostty
+    update_dezly_kingdom_hyprland
+    echo "Your kingdom has been updated"
 }
 
 # Update only the Git configuration
 function update_dezly_kingdom_git() {
-	rm ~/.dezly-kingdom/configs/git/.gitconfig
-	cp ~/.gitconfig ~/.dezly-kingdom/configs/git
+    rm ~/.dezly-kingdom/configs/git/.gitconfig
+    cp ~/.gitconfig ~/.dezly-kingdom/configs/git
 }
 
 # Update only the Zsh configuration
 function update_dezly_kingdom_zsh() {
-	rm ~/.dezly-kingdom/configs/zsh/.zshrc
-	cp ~/.zshrc ~/.dezly-kingdom/configs/zsh
+    rm ~/.dezly-kingdom/configs/zsh/.zshrc
+    cp ~/.zshrc ~/.dezly-kingdom/configs/zsh
 }
 
 # Update only the Neovim configuration
 function update_dezly_kingdom_neovim() {
-	rm -rf ~/.dezly-kingdom/configs/neovim/nvim
-	cp -r ~/.config/nvim ~/.dezly-kingdom/configs/neovim
+    rm -rf ~/.dezly-kingdom/configs/neovim/nvim
+    cp -r ~/.config/nvim ~/.dezly-kingdom/configs/neovim
 }
 
 # Update only the Yazi configuration
 function update_dezly_kingdom_yazi() {
-	rm -rf ~/.dezly-kingdom/configs/yazi/
-	cp -r ~/.config/yazi/ ~/.dezly-kingdom/configs
+    rm -rf ~/.dezly-kingdom/configs/yazi/
+    cp -r ~/.config/yazi/ ~/.dezly-kingdom/configs
+}
+
+# Update only the Ghostty configuration
+function update_dezly_kingdom_ghostty() {
+    rm -rf ~/.dezly-kingdom/configs/ghostty/
+    cp -r ~/.config/ghostty/ ~/.dezly-kingdom/configs
+}
+
+# Update only the Yazi configuration
+function update_dezly_kingdom_yazi() {
+    rm -rf ~/.dezly-kingdom/configs/yazi/
+    cp -r ~/.config/yazi/ ~/.dezly-kingdom/configs
 }
 
 # Update only the Hyprland configuration
 function update_dezly_kingdom_hyprland() {
-	rm -rf ~/.dezly-kingdom/configs/hyprland/hypr
-	cp -r ~/.config/hypr ~/.dezly-kingdom/configs/hyprland
+    rm -rf ~/.dezly-kingdom/configs/hyprland/hypr
+    cp -r ~/.config/hypr ~/.dezly-kingdom/configs/hyprland
 }
 
 #______________________________________________________________________________

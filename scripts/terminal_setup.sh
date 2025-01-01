@@ -40,14 +40,16 @@ sudo pacman -S --needed tree
 # SUB_SECTION: Terminal
 
 # Terminal Emulators
-sudo pacman -S --needed ghostty
-sudo pacman -S --needed kitty
 
-# A terminal workspace written in Rust
-sudo pacman -S --needed zellij
+# A Zig-Powered terminal emulator,
+# that supportss image rendering in the terminal
+sudo pacman -S --needed ghostty
 
 # A Rust-Powered Terminal File Manager
 sudo pacman -S --needed yazi 
+
+# A terminal workspace written in Rust
+sudo pacman -S --needed zellij
 
 #______________________________________________________________________________
 # SUB_SECTION: Terminal-Based Code Editor
