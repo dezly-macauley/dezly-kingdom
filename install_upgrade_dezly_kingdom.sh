@@ -15,7 +15,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 #______________________________________________________________________________
 # SECTION: Version Control
 
-./scripts/version_control.sh
+./software-packages/version_control.sh
 
 #______________________________________________________________________________
 # SECTION: Programming Languages
@@ -24,33 +24,33 @@ echo "Welcome to the Dezly Kingdom Installer"
 # because many programs in Dezly Kingdom depend on Rust,
 # or need to be installed from the AUR (Arch User Repository) 
 # using the AUR Helper Paru (Which has to be built from source using Rust)
-./scripts/rust_setup.sh
-./scripts/zig_setup.sh
+./software-packages/rust_setup.sh
+./software-packages/zig_setup.sh
 
-./scripts/go_setup.sh
-./scripts/python_setup.sh
-./scripts/javascript_ecosystem_setup.sh
+./software-packages/go_setup.sh
+./software-packages/python_setup.sh
+./software-packages/javascript_ecosystem_setup.sh
 
-./scripts/lua_setup.sh
+./software-packages/lua_setup.sh
 
 #______________________________________________________________________________
 # SECTION: Core Essentials
-./scripts/fonts_setup.sh
-./scripts/audio_setup.sh
-./scripts/image_setup.sh
-./scripts/drive_mounting_setup.sh
-./scripts/terminal_setup.sh
-./scripts/graphical_user_interface.sh
-./scripts/web_browser_setup.sh
+./software-packages/fonts_setup.sh
+./software-packages/audio_setup.sh
+./software-packages/image_setup.sh
+./software-packages/drive_mounting_setup.sh
+./software-packages/terminal_setup.sh
+./software-packages/graphical_user_interface.sh
+./software-packages/web_browser_setup.sh
 
 #______________________________________________________________________________
 # SECTION: Database Management
 
 # Setup SQLite
-./scripts/sqlite_setup.sh
+./software-packages/sqlite_setup.sh
 
 # Setup PostgreSQL
-./scripts/postgresql_setup.sh
+./software-packages/postgresql_setup.sh
 
 #______________________________________________________________________________
 echo " "

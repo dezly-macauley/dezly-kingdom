@@ -84,19 +84,3 @@ installed on the system:
 sudo pacman -Syu
 ```
 _______________________________________________________________________________
-#### To update all packages that paru (Arch User Repository) 
-installed on the system:
-```
-paru -Syu
-```
-_______________________________________________________________________________
-#### To update all packages that cargo (Rust) installed on the system:
-```
-???
-```
-_______________________________________________________________________________
-#### To update all packages that npm (JavaScript) installed on the system:
-```
-npm update -g
-```
-_______________________________________________________________________________

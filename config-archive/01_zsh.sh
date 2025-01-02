@@ -3,7 +3,7 @@
 # Load the default Zsh configuration from the config vault,
 # to ensure that there is no misconfiguration after changing the shell to zsh
 
-cp $HOME/.dezly-kingdom/config-vault/zsh/.zshrc $HOME
+cp $HOME/.dezly-kingdom/config-archive/zsh/.zshrc $HOME
 
 # This will check what the current shell is set to
 current_shell="$SHELL"
