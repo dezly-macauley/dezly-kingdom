@@ -10,18 +10,18 @@ sudo pacman -S --needed zsh-syntax-highlighting
 sudo pacman -S --needed zsh-autosuggestions
 
 # This will check what the current shell is set to
-current_shell="$SHELL"
+# current_shell="$SHELL"
 
 # This will change the current shell to zsh if the shell is not
 # already zsh
-if [ "$current_shell" != "/usr/bin/zsh" ]; then
-    sudo chsh -s /usr/bin/zsh
-    echo "The current shell has been changed to zsh"
-else
-    echo " "
-    echo "The current shell is already Zsh. No changes made."
-    echo " "
-fi
+# if [ "$current_shell" != "/usr/bin/zsh" ]; then
+#     sudo chsh -s /usr/bin/zsh
+#     echo "The current shell has been changed to zsh"
+# else
+#     echo " "
+#     echo "The current shell is already Zsh. No changes made."
+#     echo " "
+# fi
 
 # Shell Prompt Appearance
 sudo pacman -S --needed starship
@@ -32,7 +32,16 @@ sudo pacman -S --needed ttf-meslo-nerd
 # Use Starship Nerd Font Preset
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 
+#______________________________________________________________________________
+# Battery check and screen brightness control
+
+sudo pacman -S --needed acpi 
+sudo pacman -S --needed brightnessctl
+
+
+#______________________________________________________________________________
 # Output Appearance
+#
 sudo pacman -S --needed lsd
 sudo pacman -S --needed tree
 
@@ -47,9 +56,6 @@ sudo pacman -S --needed ghostty
 
 # A Rust-Powered Terminal File Manager
 sudo pacman -S --needed yazi 
-
-# A terminal workspace written in Rust
-sudo pacman -S --needed zellij
 
 #______________________________________________________________________________
 # SUB_SECTION: Terminal-Based Code Editor

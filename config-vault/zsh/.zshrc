@@ -18,6 +18,8 @@ export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
 #______________________________________________________________________________
 # SECTION: Update Dezly Kingdom Configurations
 
+# DO NOT USE THIS FUNCTION!!! It needs to be updated
+
 # Update the entire configuration
 function update_dezly_kingdom() {
     update_dezly_kingdom_git

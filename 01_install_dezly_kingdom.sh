@@ -41,6 +41,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./scripts/drive_mounting_setup.sh
 ./scripts/terminal_setup.sh
 ./scripts/graphical_user_interface.sh
+./scripts/web_browser_setup.sh
 
 #______________________________________________________________________________
 # SECTION: Database Management

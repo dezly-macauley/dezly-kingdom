@@ -47,10 +47,26 @@ git clone https://github.com/dezly-macauley/dezly-kingdom ~/.dezly-kingdom
 _______________________________________________________________________________
 ### Step 2 - Make the installation script executable and run it
 
+Dezly's Recommendation: `01_install_dezly_kingdom.sh` is simply a script 
+that runs all of the scripts inside the directory `~/.dezly-kingdom/scripts/`
+
+Please have a look at the scripts inside that directory to see what programs
+and packages are being installed because you may need certain programs or
+certain scripts.
+
 ```
-chmod +x ~/.dezly-kingdom/install_dezly_kingdom.sh
+chmod +x ~/.dezly-kingdom/01_install_dezly_kingdom.sh
 chmod +x ~/.dezly-kingdom/scripts/*.sh
-./install_dezly_kingdom.sh
+./01_install_dezly_kingdom.sh
+```
+
+_______________________________________________________________________________
+### Post Installation: Zsh First Time Setup
+
+```
+chmod +x ~/.dezly-kingdom/02_zsh_first_time_setup.sh
+cd $HOME/.dezly-kingdom
+./02_zsh_first_time_setup.sh
 ```
 
 _______________________________________________________________________________
