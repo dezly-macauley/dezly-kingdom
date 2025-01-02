@@ -11,7 +11,6 @@
   "modicator.nvim": { "branch": "main", "commit": "e349636d905e03305f1eda9c081e63560598f118" },
   "nvim-autopairs": { "branch": "master", "commit": "b464658e9b880f463b9f7e6ccddd93fb0013f559" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
-  "nvim-lspconfig": { "branch": "master", "commit": "ace9661c1b673e35e915bbdd88a4fd3723eaa0db" },
   "nvim-treesitter": { "branch": "master", "commit": "fc687f38d4ea9a7399707a5a2d57297c2ac17323" },
   "nvim-web-devicons": { "branch": "master", "commit": "d42e68608ba11de8567edb6aeaa0b12bdf627cbc" },
   "oil.nvim": { "branch": "master", "commit": "ba858b662599eab8ef1cba9ab745afded99cb180" },

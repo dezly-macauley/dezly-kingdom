@@ -2,11 +2,12 @@ return {
 
     {
 	"saghen/blink.cmp",
+	enabled = false,
 	dependencies = {
 	    "rafamadriz/friendly-snippets"
 	},
-    -- Use a release tag a download pre-built binaries
-    version = "v0.*",
+	-- Use a release tag a download pre-built binaries
+	version = "v0.*",
 	config = function()
 	    require("blink.cmp").setup({
 
