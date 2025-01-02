@@ -13,6 +13,12 @@ sudo pacman -S --needed python-pip
 # NOTE: This configures pip to install global packages to the directory
 # `~/.pip-global-pkgs`
 
+# This will create the `pip-global-pkgs` directory if it doesn't exist 
+if [[ ! -d "$HOME/.pip-global-pkgs" ]]; then
+    mkdir -p "$HOME/.pip-global-pkgs"
+fi
+
+# This will configure `pip/pip.conf` if it doesn't exist 
 if [[ ! -f "$HOME/.config/pip/pip.conf" ]]; then
     mkdir -p "$HOME/.config/pip" && touch "$HOME/.config/pip/pip.conf"
     cat > ~/.config/pip/pip.conf << EOF

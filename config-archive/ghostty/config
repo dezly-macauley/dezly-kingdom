@@ -1,5 +1,15 @@
 font-size = 15
-font-family = "MesloLGM Nerd Font"
-background-opacity = 0.70
 
+font-family = "MesloLGM Nerd Font"
+
+# Set a transparent black background
+background-opacity = 0.70
 background = 000000
+
+# Sets the built-in colour theme
+# To view available themes: `ghostty +list-themes`
+theme = "Firefly Traditional"
+
+# Hide the mouse while typing
+mouse-hide-while-typing = true
+
