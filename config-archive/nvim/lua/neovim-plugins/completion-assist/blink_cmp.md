@@ -2,11 +2,11 @@ return {
 
     {
 	"saghen/blink.cmp",
-	dependencies = "rafamadriz/friendly-snippets",
-
-    -- NOTE: This requires Rust to be installed on your system
-    build = "cargo build --release",
-
+	dependencies = {
+	    "rafamadriz/friendly-snippets"
+	},
+    -- Use a release tag a download pre-built binaries
+    version = "v0.*",
 	config = function()
 	    require("blink.cmp").setup({
 
