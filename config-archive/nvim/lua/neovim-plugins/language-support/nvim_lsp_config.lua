@@ -2,6 +2,7 @@ return {
 
     {
 	    "neovim/nvim-lspconfig",
+	    enabled = true,
 	    config = function()
 
 	    -- NOTE: This line below requires the plugin `blink-cmp`
@@ -54,7 +55,7 @@ return {
 	    require("lspconfig").lua_ls.setup({
 		capabilities = blink_cmp
 	    })
-    
+
 	    -- Lua
 	    require("lspconfig").bashls.setup({
 		capabilities = blink_cmp

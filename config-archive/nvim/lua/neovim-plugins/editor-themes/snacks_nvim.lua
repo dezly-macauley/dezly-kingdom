@@ -2,9 +2,10 @@ return {
 
     -- NOTE: Snacks.nvim id
     -- A collection of small QoL plugins for Neovim.
-
+    
     {
 	"folke/snacks.nvim",
+	enabled = true,
 
 	opts = {
 	    -- NOTE: These is where you select which plugins to enable	

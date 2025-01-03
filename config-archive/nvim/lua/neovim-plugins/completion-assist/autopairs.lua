@@ -5,6 +5,7 @@ return {
 
     {
         "windwp/nvim-autopairs",
+	enabled = true,
         event = { "BufReadPre", "BufNewFile" },
         config = function()
 	    require("nvim-autopairs").setup({})

@@ -2,12 +2,16 @@ return {
 
     {
 	"saghen/blink.cmp",
-	enabled = false,
+	enabled = true,
 	dependencies = {
 	    "rafamadriz/friendly-snippets"
 	},
-	-- Use a release tag a download pre-built binaries
-	version = "v0.*",
+	-- `+nightly` tells Rust to build the blink.cmp plugin using the 
+	-- nightly version of the Rust compiler (even if you have 
+	-- set your default compiler to use the stable version of Rust)
+
+	-- You simply need the nightly version of cargo installed.
+	build = "cargo +nightly build --release",
 	config = function()
 	    require("blink.cmp").setup({
 

@@ -4,6 +4,7 @@ return {
 -- and only make it visible when you are approaching the character limit
     {
         "Bekaboo/deadcolumn.nvim",
+	enabled = true,
         config = function()
             require("deadcolumn").setup({
                 blending = {

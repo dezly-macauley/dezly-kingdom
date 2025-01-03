@@ -2,7 +2,7 @@ return {
 
 	{
 	    "nvim-treesitter/nvim-treesitter",
-
+	    enabled = true,
 	    -- This tells the package manager `lazy.nvim`,
 	    -- That whenever nvim-treesitter is updated,
 	    -- it should run the command `:TSUpdage`,
@@ -58,7 +58,7 @@ return {
 			-------------------------------------------------------
 
 		    }
-		    
+
 
 		})
 

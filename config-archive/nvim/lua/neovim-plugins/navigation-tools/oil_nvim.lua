@@ -2,6 +2,7 @@ return {
 
     {
 	"stevearc/oil.nvim",
+	enabled = true,
 	dependencies = {
 	    "echasnovski/mini.icons",
 	    config = function()
@@ -21,12 +22,14 @@ return {
 
 		-- Show files and directories that start with "."
 		view_options = {
-		    show_hidden = true 
+		    show_hidden = true
 		},
 
 		-- I only want to Enter as a keymap
 		use_default_keymaps = false,
 		keymaps = {
+		    -- When using Oil.nvim you can enter a directory by
+		    -- pressing enter
 		    ["<CR>"] = "actions.select",
 		},
 

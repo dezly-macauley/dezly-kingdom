@@ -3,7 +3,7 @@ return {
     {
 	-- This will install the plugin from GitHub
 	"navarasu/onedark.nvim",
-
+	enabled = true,
 	-- config will trigger the annoymous function,
 	-- to perform some tasks after the plugin has been installed
 	config = function()
