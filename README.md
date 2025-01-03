@@ -1,4 +1,4 @@
-# 🏰 Dezly Kingdom 
+# 🏰 Dezly Kingdom
 _______________________________________________________________________________
 ## About
 
@@ -10,7 +10,6 @@ My digital kingdom that uses the following technologies at the foundation:
 
 _______________________________________________________________________________
 ## Technologies Used
-
 
 _______________________________________________________________________________
 ## Requirements
@@ -71,6 +70,8 @@ cd $HOME/.dezly-kingdom
 
 _______________________________________________________________________________
 ### Post Installational Maintenance
+
+#### Pacman
 
 #### To view a list of all installed programs
 ```
