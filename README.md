@@ -71,12 +71,14 @@ cd $HOME/.dezly-kingdom
 _______________________________________________________________________________
 ### Post Installational Maintenance
 
-#### Pacman
+#### Pacman (Arch Package Manager ) & Paru (AUR Helper)
 
-#### To view a list of all installed programs
+Use this command. It updates both pacman packages and AUR packages 
 ```
-pacman -Qe
+paru -Syu
 ```
+
+Do NOT use `pacman -Syu` because this 
 
 _______________________________________________________________________________
 #### To update all packages that pacman (The Arch Linux package manager)
