@@ -1,3 +1,7 @@
+# SECTION: Dezly Saga
+
+alias saga="cd $HOME/dezly-saga"
+
 #______________________________________________________________________________
 # SECTION: Python Globally Installed Packages 
 
