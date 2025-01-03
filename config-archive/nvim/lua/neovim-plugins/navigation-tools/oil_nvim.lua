@@ -21,7 +21,7 @@ return {
 
 		-- Show files and directories that start with "."
 		view_options = {
-		    show_hidden = false
+		    show_hidden = true 
 		},
 
 		-- I only want to Enter as a keymap
