@@ -54,9 +54,6 @@ sudo pacman -S --needed tree
 # that supportss image rendering in the terminal
 sudo pacman -S --needed ghostty
 
-# A Rust-Powered Terminal File Manager
-sudo pacman -S --needed yazi 
-
 #______________________________________________________________________________
 # SUB_SECTION: Terminal-Based Code Editor
 

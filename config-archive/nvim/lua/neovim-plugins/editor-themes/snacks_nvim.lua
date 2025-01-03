@@ -2,7 +2,7 @@ return {
 
     -- NOTE: Snacks.nvim id
     -- A collection of small QoL plugins for Neovim.
-    
+
     {
 	"folke/snacks.nvim",
 	enabled = true,
@@ -16,6 +16,7 @@ return {
 	    -- This adds a vertical line that shows you what scope you are
 	    -- currently inside
 	    indent = { enabled = true },
+	    scope = { enabled = true }
 
 	}
 

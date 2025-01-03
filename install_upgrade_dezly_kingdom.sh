@@ -38,7 +38,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./software-packages/fonts_setup.sh
 ./software-packages/audio_setup.sh
 ./software-packages/image_setup.sh
-./software-packages/drive_mounting_setup.sh
+./software-packages/file_management_setup.sh
 ./software-packages/terminal_setup.sh
 ./software-packages/graphical_user_interface.sh
 ./software-packages/web_browser_setup.sh
