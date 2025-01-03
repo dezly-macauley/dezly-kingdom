@@ -1,4 +1,11 @@
 #______________________________________________________________________________
+# SECTION: Python Globally Installed Packages 
+
+# This where programs that are installed with `pip install name-of-program`
+# will be installed to
+# export PATH="$HOME/.pip-global-pkgs:$PATH"
+
+#______________________________________________________________________________
 # SECTION: Rust Installed Programs 
 
 # This where Rust programs that are installed and need to be available
