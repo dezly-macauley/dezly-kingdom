@@ -4,71 +4,71 @@ return {
 	    "neovim/nvim-lspconfig",
 	    enabled = true,
 	    config = function()
-
 	    -------------------------------------------------------------------
-	    
+		--- NOTE: To find out what is the correct name
+		--- for the lsp server you want, check the link below:
 
+		-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 
-	    -- NOTE: This line below requires the plugin `blink-cmp`
-	    local blink_cmp = require("blink.cmp").get_lsp_capabilities()
-	    -- This creates a local variable that will activate the 
-	    -- enhanced lsp capabilities of blink-cmp
-
+		local lsp = require("lspconfig")
 	    -------------------------------------------------------------------
-	    --- NOTE: Check this link to see the list of available-lsp-servers
-	    -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-	    -------------------------------------------------------------------
-	    -- Now blink-cmp can be added to the existing
-	    -- capabilities of each language server
+		-- NOTE: This line below requires the plugin `blink-cmp`
+
+		-- This creates a local variable that will activate the 
+		-- enhanced lsp capabilities of blink-cmp
+		local blink_cmp = require("blink.cmp").get_lsp_capabilities()
 
 	    -------------------------------------------------------------------
 	    -- SECTION: Low-Level Systems Programming
 
-	    -- Rust
-	    require("lspconfig").rust_analyzer.setup({
-		capabilities = blink_cmp
-	    })
+		-- Rust
+		lsp.rust_analyzer.setup({
+		    capabilities = blink_cmp
+		})
 
-	    --- Zig
-	    require("lspconfig").zls.setup({
-		capabilities = blink_cmp
-	    })
+		--- Zig
+		lsp.zls.setup({
+		    capabilities = blink_cmp
+		})
 
-	    --- C and C++
-	    require("lspconfig").clangd.setup({
-		capabilities = blink_cmp
-	    })
+		--- C and C++
+		lsp.clangd.setup({
+		    capabilities = blink_cmp
+		})
 
 	    -------------------------------------------------------------------
 	    -- SECTION: Back-End Development	    
 
-	    -- Go
-	    require("lspconfig").gopls.setup({
-		capabilities = blink_cmp
-	    })
+		-- Go
+		lsp.gopls.setup({
+		    capabilities = blink_cmp
+		})
 
-	    -- Python
-	    require("lspconfig").pyright.setup({
-		capabilities = blink_cmp
-	    })
+		-- Python
+		lsp.pyright.setup({
+		    capabilities = blink_cmp
+		})
 
 	    -------------------------------------------------------------------
 	    -- SECTION: Scripting
 
-	    -- Bash
-	    require("lspconfig").lua_ls.setup({
-		capabilities = blink_cmp
-	    })
+		-- Bash
+		lsp.lua_ls.setup({
+		    capabilities = blink_cmp
+		})
 
-	    -- Lua
-	    require("lspconfig").bashls.setup({
-		capabilities = blink_cmp
-	    })
+		-- Lua
+		lsp.bashls.setup({
+		    capabilities = blink_cmp
+		})
 
 	    -------------------------------------------------------------------
 	    -- SECTION: Front-End Development
 
-	    -- lsp.denols.setup({}) -- TypeScript, JavaScript
+		-- TypeScript and JavaScript
+		lsp.denols.setup({
+		    capabilities = blink_cmp
+		})
 
 	    -------------------------------------------------------------------
 
