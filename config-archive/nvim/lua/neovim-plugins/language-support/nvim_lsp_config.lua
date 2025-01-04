@@ -65,8 +65,18 @@ return {
 	    -------------------------------------------------------------------
 	    -- SECTION: Front-End Development
 
-		-- TypeScript and JavaScript
+		-- Svelte
 		lsp.denols.setup({
+		    capabilities = blink_cmp
+		})
+
+		-- TypeScript and JavaScript
+		lsp.svelte.setup({
+		    capabilities = blink_cmp
+		})
+
+		-- Tailwind CSS
+		lsp.tailwindcss.setup({
 		    capabilities = blink_cmp
 		})
 
