@@ -5,6 +5,10 @@ return {
 	    enabled = true,
 	    config = function()
 
+	    -------------------------------------------------------------------
+	    
+
+
 	    -- NOTE: This line below requires the plugin `blink-cmp`
 	    local blink_cmp = require("blink.cmp").get_lsp_capabilities()
 	    -- This creates a local variable that will activate the 
@@ -60,6 +64,11 @@ return {
 	    require("lspconfig").bashls.setup({
 		capabilities = blink_cmp
 	    })
+
+	    -------------------------------------------------------------------
+	    -- SECTION: Front-End Development
+
+	    -- lsp.denols.setup({}) -- TypeScript, JavaScript
 
 	    -------------------------------------------------------------------
 

@@ -1,3 +1,5 @@
+-- SECTION: Custom Keymaps - Native Neovim Commands
+
 -- SECTION: Local Variables (For Convenience)
 local keymap = vim.keymap.set
 
@@ -60,7 +62,8 @@ keymap(
 
 -------------------------------------------------------------------------------
 -- Error handling
-keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+keymap('n', '<leader>q', vim.diagnostic.setloclist, 
+{ desc = 'Open diagnostic [Q]uickfix list' })
 -------------------------------------------------------------------------------
 
 -- keymap("n", "grr", vim.lsp.buf.references)
@@ -74,46 +77,67 @@ keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q
 -- A tab is a collection of buffers
 
 -------------------------------------------------------------------------------
-
--- SECTION: Custom Keymaps For Plugins
--------------------------------------------------------------------------------
--- NOTE: This keymap requires the plugin oil.nvim
-keymap("n", "<leader>fe", "<CMD>Oil<CR>",
-{ desc = "Open parent directory" })
+-- SECTION: Custom Keymaps - Neovim Plugins
 
 -------------------------------------------------------------------------------
--- NOTE: This keymap is for `nvim telescope`
+-- SUB_SECTION: Peek.nvim 
+-- View markdown files in a brower window
+
+keymap(
+    "n", "<leader>mo",
+    ":PeekOpen<CR>",
+    { desc = "[m]arkdown [o]pen" }
+)
+
+keymap(
+    "n", "<leader>mc",
+    ":PeekClose<CR>",
+    { desc = "[m]arkdown [c]close" }
+)
+
+-------------------------------------------------------------------------------
+-- SUB_SECTION: Oil.nvim
+-- View and edit files and directories like they are text
+
+keymap(
+    "n", "<leader>fe",
+    "<CMD>Oil<CR>",
+    { desc = "[f]ile [e]plorer" }
+)
+
+-------------------------------------------------------------------------------
+-- SUB_SECTION: Telescope.nvim
+-- An efficient way to seach for a file
+
+-- NOTE: To close telescope without selecting an option,
+-- press `Esc` twice
 
 local tsb = require("telescope.builtin")
 
-keymap("n", "<leader>sf", tsb.find_files)
--- To close nvim telescope after opening it press `Esc` `Esc`
+keymap(
+    "n", "<leader>sf",
+    tsb.find_files,
+    { desc = "[s]earch [f]iles in directory" }
+)
 
--- This allows you to search and open files in your Neovim config 
--- from any directory
 keymap(
     "n", "<leader>snc",
     function ()
 	tsb.find_files({
 	    cwd = vim.fn.stdpath("config")
 	})
-    end
+    end,
+    { desc = "[s]earch [n]eovim [c]onfig" }
 )
 
--- This allows you to search and open configuration files 
--- in Dezly Kingdom from any directory
 keymap(
     "n", "<leader>sdk",
     function ()
         tsb.find_files({
-            -- cwd = "/home/dezly-macauley/.dezly-kingdom"
             cwd = "$HOME/.dezly-kingdom"
         })
-    end
+    end,
+    { desc = "[s]earch [d]ezly [k]ingdom" }
 )
--------------------------------------------------------------------------------
--- SECTION: Requires Peek
--- keymap("n", "<leader>mo", ":PeekOpen<CR>")
--- keymap("n", "<leader>mc", ":PeekClose<CR>")
 
 -------------------------------------------------------------------------------

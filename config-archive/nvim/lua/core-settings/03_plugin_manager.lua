@@ -36,6 +36,9 @@ require("lazy").setup({
 	{ import = "neovim-plugins.completion-assist" },
 	{ import = "neovim-plugins.language-support" },
 	{ import = "neovim-plugins.navigation-tools" },
+	{ import = "neovim-plugins.navigation-tools" },
+	{ import = "neovim-plugins.markdown-viewer"}
+
     }
 
 })
