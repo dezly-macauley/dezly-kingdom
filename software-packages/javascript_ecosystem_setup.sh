@@ -6,6 +6,10 @@ sudo pacman -S --needed nodejs
 # The default JavaScript package manager
 sudo pacman -S --needed npm
 
+# A Rust-powered JavaScript runtime, 
+# with native TypeScript support, and a focus on security
+sudo pacman -S --needed deno
+
 # This will create the directory `npm-global-pkgs`
 # If it already exists nothing will be done
 [ ! -d "$HOME/.npm-global-pkgs" ] \
