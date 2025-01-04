@@ -20,18 +20,20 @@ echo "Welcome to the Dezly Kingdom Installer"
 #______________________________________________________________________________
 # SECTION: Programming Languages
 
-# Rust should be the first thing that should be installed and properly setup, 
-# because many programs in Dezly Kingdom depend on Rust,
+# NOTE: Rust should be the first thing that should be 
+# installed and properly setup.
+# This is because many programs in Dezly Kingdom depend on Rust,
 # or need to be installed from the AUR (Arch User Repository) 
 # using the AUR Helper Paru (Which has to be built from source using Rust)
+
 ./software-packages/rust_setup.sh
 ./software-packages/zig_setup.sh
 
 ./software-packages/go_setup.sh
 ./software-packages/python_setup.sh
 ./software-packages/javascript_ecosystem_setup.sh
-
 ./software-packages/lua_setup.sh
+./software-packages/tailwindcss.sh
 
 #______________________________________________________________________________
 # SECTION: Core Essentials
@@ -51,6 +53,9 @@ echo "Welcome to the Dezly Kingdom Installer"
 
 # Setup PostgreSQL
 ./software-packages/postgresql_setup.sh
+
+# Setup Mariadb
+./software-packages/mariadb.sh
 
 #______________________________________________________________________________
 # SECTION: Source-built packages

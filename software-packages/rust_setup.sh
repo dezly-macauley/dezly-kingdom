@@ -10,7 +10,16 @@ rustup default stable
 # Install the nightly release of Rust
 # This is needed by a Neovim plugin called `blink.cmp`
 # which provides autocompletion
-rustup install nightly
+
+#______________________________________________________________________________
+
+# NOTE: You can uncomment this after your first install,
+# otherwise you will download the latest version of `nightly` every time
+# you update your system
+
+# rustup install nightly
+
+#______________________________________________________________________________
 
 # Install the language support for Rust
 sudo pacman -S --needed rust-analyzer
