@@ -1,6 +1,28 @@
 # SECTION: Dezly Saga
 
-alias saga="cd $HOME/dezly-saga"
+saga() {
+    if [[ $# -eq 0 ]]; then
+        cd $HOME/dezly-saga
+    else
+        case $1 in
+            --lua) cd $HOME/dezly-saga/lua && nvim . ;;
+            --markdown) cd $HOME/dezly-saga/markdown && nvim . ;;
+            --python) cd $HOME/dezly-saga/python && nvim . ;;
+            --shell) cd $HOME/dezly-saga/shell-scripting && nvim . ;;
+            *) 
+                echo "Error: $1 is not a valid flag"
+                echo "
+                Valid Flags:
+                
+                --lua
+                --markdown
+                --python
+                --shell
+                "
+                ;;
+        esac
+    fi
+}
 
 #______________________________________________________________________________
 # SECTION: Python Globally Installed Packages 
@@ -28,19 +50,19 @@ export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
 # Use these aliases to edit the files that are currently on your system
 
 # Version Control and Shell
-alias edit-git="cd ~ && nvim .gitconfig"
-alias edit-zsh="cd ~ && nvim .zshrc"
+alias edit-git="cd $HOME && nvim .gitconfig"
+alias edit-zsh="cd $HOME && nvim .zshrc"
 
 # Graphical Applications
-alias edit-ghostty="cd ~/.config/ghostty/ && nvim config"
-alias edit-hyprland="cd ~/.config/hypr/ && nvim hyprland.conf"
+alias edit-ghostty="cd $HOME/.config/ghostty/ && nvim config"
+alias edit-hyprland="cd $HOME/.config/hypr/ && nvim hyprland.conf"
 
 # Terminal Applications
-alias edit-neovim="cd ~/.config/nvim && nvim init.lua"
-alias edit-yazi="cd ~/.config/yazi/ && nvim yazi.toml"
+alias edit-neovim="cd $HOME/.config/nvim && nvim init.lua"
+alias edit-yazi="cd $HOME/.config/yazi/ && nvim yazi.toml"
 
 # Central Configuration
-alias kingdom="cd ~/.dezly-kingdom"
+alias kingdom="cd $HOME/.dezly-kingdom"
 
 # Update the config-archive in dezly-kingdom
 # Think of this as making a backup of your current configurations
@@ -57,38 +79,38 @@ function update_config_archive() {
 }
 
 function update_config_archive_git() {
-    rm ~/.dezly-kingdom/config-archive/git/.gitconfig
-    cp ~/.gitconfig ~/.dezly-kingdom/config-archive/git
+    rm $HOME/.dezly-kingdom/config-archive/git/.gitconfig
+    cp $HOME/.gitconfig $HOME/.dezly-kingdom/config-archive/git
     echo "🔄 config-archive/git has been updated"
 }
 
 function update_config_archive_zsh() {
-    rm ~/.dezly-kingdom/config-archive/zsh/.zshrc
-    cp ~/.zshrc ~/.dezly-kingdom/config-archive/zsh
+    rm $HOME/.dezly-kingdom/config-archive/zsh/.zshrc
+    cp $HOME/.zshrc $HOME/.dezly-kingdom/config-archive/zsh
     echo "🐚 config-archive/zsh has been updated"
 }
 
 function update_config_archive_ghostty() {
-    rm -rf ~/.dezly-kingdom/config-archive/ghostty/
-    cp -r ~/.config/ghostty/ ~/.dezly-kingdom/config-archive
+    rm -rf $HOME/.dezly-kingdom/config-archive/ghostty/
+    cp -r $HOME/.config/ghostty/ $HOME/.dezly-kingdom/config-archive
     echo "👻 config-archive/ghostty has been updated"
 }
 
 function update_config_archive_hyprland() {
-    rm -rf ~/.dezly-kingdom/config-archive/hypr
-    cp -r ~/.config/hypr ~/.dezly-kingdom/config-archive
+    rm -rf $HOME/.dezly-kingdom/config-archive/hypr
+    cp -r $HOME/.config/hypr ~/.dezly-kingdom/config-archive
     echo "🖼️ config-archive/hyprland has been updated"
 }
 
 function update_config_archive_yazi() {
-    rm -rf ~/.dezly-kingdom/config-archive/yazi/
-    cp -r ~/.config/yazi/ ~/.dezly-kingdom/config-archive
+    rm -rf $HOME/.dezly-kingdom/config-archive/yazi/
+    cp -r $HOME/.config/yazi/ $HOME/.dezly-kingdom/config-archive
     echo "🦆 config-archive/yazi has been updated"
 }
 
 function update_config_archive_neovim() {
-    rm -rf ~/.dezly-kingdom/config-archive/nvim/
-    cp -r ~/.config/nvim/ ~/.dezly-kingdom/config-archive
+    rm -rf $HOME/.dezly-kingdom/config-archive/nvim/
+    cp -r $HOME/.config/nvim/ $HOME/.dezly-kingdom/config-archive
     echo "💚 config-archive/nvim has been updated"
 }
 
@@ -109,7 +131,11 @@ alias battery-life="acpi"
 alias wifi-on="nmcli radio wifi on"
 alias flight-mode="nmcli radio all off"
 
-# Screen Brightness
+#______________________________________________________________________________
+# SECTION: Screen Brightness
+
+# WARNING: Do NOT set brightnessctl to 0%
+
 alias bright-lowest="brightnessctl set 1%"
 alias bright-10="brightnessctl set 10%"
 alias bright-25="brightnessctl set 25%"
@@ -128,9 +154,9 @@ SAVEHIST=9000
 
 # A function to clear the shell history
 shell_history_clear() {
-    cat /dev/null > ~/.zsh_history && \
-    rm -f ~/.zsh_history && \
-    touch ~/.zsh_history && \
+    cat /dev/null > $HOME/.zsh_history && \
+    rm -f $HOME/.zsh_history && \
+    touch $HOME/.zsh_history && \
     exec zsh
 }
 
@@ -155,20 +181,20 @@ shell_reload() {
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #______________________________________________________________________________
-# SUB_SECTION: Starship Shell Prompt
-
-# Change the default zsh prompt to starship
-eval "$(starship init zsh)"
-
-#______________________________________________________________________________
 # SUB_SECTION: Zsh Highlighting
-
-# Make sure that this line is placed after the starship shell prompt
-# line in this file, or else starship will cancel out the syntax highlighting 
 
 # NOTE: Install this package first:
 # sudo pacman -S --needed zsh-syntax-highlighting
 source /usr/share/zsh/plugins/\
 zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#______________________________________________________________________________
+# SUB_SECTION: Starship Shell Prompt
+
+# WARNING: Make sure that starship is the last line in this `.zshrc` file
+
+# Change the default zsh prompt to starship
+# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 #______________________________________________________________________________
