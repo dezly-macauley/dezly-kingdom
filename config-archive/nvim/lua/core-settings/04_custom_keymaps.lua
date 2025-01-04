@@ -62,7 +62,7 @@ keymap(
 
 -------------------------------------------------------------------------------
 -- Error handling
-keymap('n', '<leader>q', vim.diagnostic.setloclist, 
+keymap('n', '<leader>q', vim.diagnostic.setloclist,
 { desc = 'Open diagnostic [Q]uickfix list' })
 -------------------------------------------------------------------------------
 
@@ -110,14 +110,37 @@ keymap(
 -- An efficient way to seach for a file
 
 -- NOTE: To close telescope without selecting an option,
--- press `Esc` twice
+-- press `Ctrl c` or `Esc` twice
 
 local tsb = require("telescope.builtin")
+
+keymap(
+    "n", "<leader><leader>",
+    tsb.buffers,
+    { desc = "View files that are currently open" }
+)
 
 keymap(
     "n", "<leader>sf",
     tsb.find_files,
     { desc = "[s]earch [f]iles in directory" }
+)
+keymap(
+    "n", "<leader>sd",
+    tsb.diagnostics,
+    { desc = "[s]earch [d]iagnostics" }
+)
+
+keymap(
+    "n", "<leader>sk",
+    tsb.keymaps,
+    { desc = "[s]earch [k]eymaps" }
+)
+
+keymap(
+    "n", "<leader>sh",
+    tsb.help_tags,
+    { desc = "[s]earch [h]elp" }
 )
 
 keymap(

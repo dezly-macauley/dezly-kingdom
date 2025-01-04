@@ -6,10 +6,12 @@ return {
 	dependencies = {
 	    "nvim-lua/plenary.nvim",
 
-	    -- This will make Telescope nvim faster
+	    -- This is an extension to improve 
+	    -- the sorting speed of telescope
 	    { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-	    config = function()
 
+	    config = function()
+		require("telescope").load_extension("fzy_native")
 	    end
 	}
 
