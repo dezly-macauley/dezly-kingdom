@@ -1,3 +1,10 @@
+#______________________________________________________________________________
+# SECTION: Current Projects
+
+alias project-one="cd $HOME/dezly-saga/vyper-programming/\
+cu-int-vyper/sec-2-web3py && nvim ."
+
+#______________________________________________________________________________
 # SECTION: Dezly Saga
 
 saga() {
