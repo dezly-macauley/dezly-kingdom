@@ -32,6 +32,9 @@ sudo pacman -S --needed ttf-meslo-nerd
 # Use Starship Nerd Font Preset
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 
+# A shell extension that can automatically load environment variables
+sudo pacman -S --needed direnv
+
 #______________________________________________________________________________
 # Battery check and screen brightness control
 

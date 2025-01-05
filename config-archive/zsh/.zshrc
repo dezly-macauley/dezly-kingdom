@@ -5,10 +5,11 @@ saga() {
         cd $HOME/dezly-saga
     else
         case $1 in
-            --lua) cd $HOME/dezly-saga/lua && nvim . ;;
-            --markdown) cd $HOME/dezly-saga/markdown && nvim . ;;
-            --python) cd $HOME/dezly-saga/python && nvim . ;;
+            --lua) cd $HOME/dezly-saga/lua-scripting/ && nvim . ;;
+            --markdown) cd $HOME/dezly-saga/markdown-documentation && nvim . ;;
+            --python) cd $HOME/dezly-saga/python-programming && nvim . ;;
             --shell) cd $HOME/dezly-saga/shell-scripting && nvim . ;;
+            --vyper) cd $HOME/dezly-saga/vyper-programming/syntax-recap/ && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
@@ -18,6 +19,7 @@ saga() {
                 --markdown
                 --python
                 --shell
+                --vyper
                 "
                 ;;
         esac
@@ -116,6 +118,7 @@ function update_config_archive_neovim() {
 
 #______________________________________________________________________________
 # SECTION: Terminal Output Settings
+
 alias tree="tree --gitignore"  
 alias ls="lsd"
 #______________________________________________________________________________
@@ -187,6 +190,22 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # sudo pacman -S --needed zsh-syntax-highlighting
 source /usr/share/zsh/plugins/\
 zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#______________________________________________________________________________
+# SUB_SECTION: Direnv 
+
+# NOTE: Install this package first:
+# sudo pacman -S -needed direnv
+
+# This is required for `direnv` to work
+# direnv is a program that will automatically load the `.env` file in a
+# directory when you enter that directory
+eval "$(direnv hook zsh)"
+
+# NOTE: This line below will disable the messages that direnv displays when 
+# you enter a directory 
+
+export DIRENV_LOG_FORMAT=""
 
 #______________________________________________________________________________
 # SUB_SECTION: Starship Shell Prompt
