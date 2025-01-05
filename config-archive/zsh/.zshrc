@@ -1,24 +1,22 @@
 # SECTION: Dezly Saga
 
 saga() {
+    local saga_root="$HOME/dezly-saga"
+    local python_recap="$saga_root/python-programming/syntax-recap"
+    local vyper_recap="$saga_root/vyper-programming/syntax-recap"
+
     if [[ $# -eq 0 ]]; then
-        cd $HOME/dezly-saga
+        cd $saga_root
     else
         case $1 in
-            --lua) cd $HOME/dezly-saga/lua-scripting/ && nvim . ;;
-            --markdown) cd $HOME/dezly-saga/markdown-documentation && nvim . ;;
-            --python) cd $HOME/dezly-saga/python-programming && nvim . ;;
-            --shell) cd $HOME/dezly-saga/shell-scripting && nvim . ;;
-            --vyper) cd $HOME/dezly-saga/vyper-programming/syntax-recap/ && nvim . ;;
+            --python) cd $python_recap && nvim . ;;
+            --vyper) cd $vyper_recap && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
                 Valid Flags:
                 
-                --lua
-                --markdown
                 --python
-                --shell
                 --vyper
                 "
                 ;;
