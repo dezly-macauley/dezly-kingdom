@@ -21,5 +21,13 @@ rustup default stable
 
 #______________________________________________________________________________
 
+# NOTE: You can uncomment this after your first install,
+# otherwise you will download the latest version of `foundry` 
+# (A web3 framework) every time you update your system
+
+cargo install --git https://github.com/foundry-rs/foundry --profile release --locked forge cast chisel anvil
+
+#______________________________________________________________________________
+
 # Install the language support for Rust
 sudo pacman -S --needed rust-analyzer

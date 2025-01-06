@@ -8,8 +8,12 @@ paru -S --needed auto-cpufreq
 sudo systemctl enable --now auto-cpufreq.service
 
 #______________________________________________________________________________
-# SQLite
+# Database Management
 
-# paru -S litecli (Don't install this just yet)
+# A language server for SQL that is written in Go
+paru -S --needed sqls
+
+# A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting
+paru -S --needed mycli
 
 #______________________________________________________________________________

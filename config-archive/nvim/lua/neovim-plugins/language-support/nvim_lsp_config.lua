@@ -49,6 +49,11 @@ return {
 		    capabilities = blink_cmp
 		})
 
+		-- SQL
+		lsp.sqlls.setup({
+		    capabilities = blink_cmp
+		})
+
 	    -------------------------------------------------------------------
 	    -- SECTION: Scripting
 
