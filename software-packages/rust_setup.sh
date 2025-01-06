@@ -25,7 +25,7 @@ rustup default stable
 # otherwise you will download the latest version of `foundry` 
 # (A web3 framework) every time you update your system
 
-cargo install --git https://github.com/foundry-rs/foundry --profile release --locked forge cast chisel anvil
+# cargo install --git https://github.com/foundry-rs/foundry --profile release --locked forge cast chisel anvil
 
 #______________________________________________________________________________
 
