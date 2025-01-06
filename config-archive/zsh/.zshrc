@@ -1,8 +1,7 @@
 #______________________________________________________________________________
 # SECTION: Current Projects
 
-alias project-one="cd $HOME/dezly-saga/vyper-programming/\
-cu-int-vyper/sec-2-web3py && nvim ."
+alias project-one=""
 
 #______________________________________________________________________________
 # SECTION: Dezly Saga
@@ -10,21 +9,24 @@ cu-int-vyper/sec-2-web3py && nvim ."
 saga() {
     local saga_root="$HOME/dezly-saga"
     local python_recap="$saga_root/python-programming/syntax-recap"
-    local vyper_recap="$saga_root/vyper-programming/syntax-recap"
+    local rust_recap="$saga_root/rust-programming/rust-by-example"
+    local vyper_recap="$saga_root/vyper-programming/cu-int-py-and-vy/sec-2-web3py"
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
     else
         case $1 in
             --python) cd $python_recap && nvim . ;;
+            --rust) cd $rust_recap && nvim . ;;
             --vyper) cd $vyper_recap && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
-                Valid Flags:
+                Valid Commands:
                 
-                --python
-                --vyper
+                saga --python
+		saga --rust
+                saga --vyper
                 "
                 ;;
         esac
