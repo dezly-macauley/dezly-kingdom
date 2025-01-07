@@ -8,6 +8,7 @@ alias project-one=""
 
 saga() {
     local saga_root="$HOME/dezly-saga"
+    local go_recap="$saga_root/go-programming"
     local mariadb_recap="$saga_root/mariadb-databases"
     local postgresql_recap="$saga_root/postgresql-databases"
     local python_recap="$saga_root/python-programming/syntax-recap"
@@ -19,6 +20,7 @@ saga() {
         cd $saga_root
     else
         case $1 in
+            --go) cd $go_recap && nvim . ;;
             --mariadb) cd $mariadb_recap && nvim . ;;
             --postgresql) cd $postgresql_recap && nvim . ;;
             --python) cd $python_recap && nvim . ;;
@@ -30,6 +32,7 @@ saga() {
                 echo "
                 Valid Commands:
                
+		saga --go
 		saga --mariadb
                 saga --python
 		saga --rust
@@ -70,7 +73,7 @@ export GOPATH=$HOME/.go-global-pkgs
 
 # This adds the GOPATH to my shell so that I can use programs 
 # installed by the Go package manager in any directory.
-# export PATH=$GOPATH/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 #______________________________________________________________________________
 # SECTION: JavaScript Installed Programs 
