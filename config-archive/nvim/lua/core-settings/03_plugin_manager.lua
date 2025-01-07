@@ -38,7 +38,6 @@ require("lazy").setup({
 	{ import = "neovim-plugins.navigation-tools" },
 	{ import = "neovim-plugins.navigation-tools" },
 	{ import = "neovim-plugins.markdown-viewer"}
-
     }
 
 })

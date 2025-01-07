@@ -28,12 +28,12 @@ echo "Welcome to the Dezly Kingdom Installer"
 
 ./software-packages/rust_setup.sh
 ./software-packages/zig_setup.sh
-
 ./software-packages/go_setup.sh
 ./software-packages/python_setup.sh
-./software-packages/javascript_ecosystem_setup.sh
 ./software-packages/lua_setup.sh
-./software-packages/tailwindcss.sh
+
+./software-packages/html_and_css_setup.sh
+./software-packages/javascript_ecosystem_setup.sh
 
 #______________________________________________________________________________
 # SECTION: Core Essentials
@@ -48,14 +48,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 #______________________________________________________________________________
 # SECTION: Database Management
 
-# Setup SQLite
-./software-packages/sqlite_setup.sh
-
-# Setup PostgreSQL
-./software-packages/postgresql_setup.sh
-
-# Setup Mariadb
-./software-packages/mariadb.sh
+./software-packages/sql_databases.sh
 
 #______________________________________________________________________________
 # SECTION: Source-built packages

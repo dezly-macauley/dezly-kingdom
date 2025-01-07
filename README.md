@@ -71,19 +71,26 @@ cd $HOME/.dezly-kingdom
 _______________________________________________________________________________
 ### Post Installational Maintenance
 
-#### Pacman (Arch Package Manager ) & Paru (AUR Helper)
+#### How to update your entire system
 
-Use this command. It updates both pacman packages and AUR packages 
+This command will update packages installed from both `pacman`
+and `paru` (AUR packages)
 ```
 paru -Syu
 ```
 
-Do NOT use `pacman -Syu` because this 
+Do NOT use `pacman -Syu` because this will not updated AUR packages.
 
 _______________________________________________________________________________
-#### To update all packages that pacman (The Arch Linux package manager)
-installed on the system:
+#### How to uninstall packages
+
+To unistall a program that was installed by pacman:
 ```
-sudo pacman -Syu
+paru -Rns name-of-package
+```
+
+To unistall a program that was installed by Paru (I.e. An AUR package):
+```
+paru -Rns name-of-package
 ```
 _______________________________________________________________________________

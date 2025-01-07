@@ -50,9 +50,9 @@ return {
 		})
 
 		-- SQL
-		lsp.sqlls.setup({
-		    capabilities = blink_cmp
-		})
+		-- lsp.sqlls.setup({
+		--     capabilities = blink_cmp
+		-- })
 
 	    -------------------------------------------------------------------
 	    -- SECTION: Scripting
@@ -75,13 +75,23 @@ return {
 		    capabilities = blink_cmp
 		})
 
-		-- TypeScript and JavaScript
+		-- TypeScript
 		lsp.svelte.setup({
 		    capabilities = blink_cmp
 		})
 
 		-- Tailwind CSS
 		lsp.tailwindcss.setup({
+		    capabilities = blink_cmp
+		})
+
+		-- CSS 
+		lsp.cssls.setup({
+		    capabilities = blink_cmp
+		})
+
+		-- HTML 
+		lsp.html.setup({
 		    capabilities = blink_cmp
 		})
 

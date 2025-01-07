@@ -47,6 +47,25 @@ saga() {
 # system-wide will go
 export PATH="$HOME/.cargo/bin:$PATH"
 #______________________________________________________________________________
+# SECTION: Go Installed Programs 
+
+# NOTE: Modifying the GOPATH
+
+# By default Go sets this to `$HOME/.go`
+# I don't like having a random directory in my home directory called `go`,
+# so I modified the name and made it a hidden directory.
+# This line below lets Go know that my file path has been changed.
+# This is where I prefer Go to install packages
+export GOPATH=$HOME/.go-global-pkgs
+
+# NOTE: To check what the GOPATH is currently set to, run this command:
+# go env GOPATH
+
+# This adds the GOPATH to my shell so that I can use programs 
+# installed by the Go package manager in any directory.
+# export PATH=$GOPATH/bin:$PATH
+
+#______________________________________________________________________________
 # SECTION: JavaScript Installed Programs 
 
 # This where npm packages (JavaScript ecosystem) 

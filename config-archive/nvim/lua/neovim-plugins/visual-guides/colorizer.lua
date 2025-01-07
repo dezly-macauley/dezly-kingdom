@@ -12,9 +12,7 @@ return {
                 -- You can also set the plugin to automatically work
                 -- when you open certain file types
                 "css";
-                "svelte";
                 "lua";
-                "toml";
             })
         end
     }
