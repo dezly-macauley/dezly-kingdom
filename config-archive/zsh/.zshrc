@@ -8,7 +8,7 @@ alias project-one=""
 
 saga() {
     local saga_root="$HOME/dezly-saga"
-    local go_recap="$saga_root/go-programming"
+    local go_recap="$saga_root/go-programming/syntax-recap"
     local mariadb_recap="$saga_root/mariadb-databases"
     local postgresql_recap="$saga_root/postgresql-databases"
     local python_recap="$saga_root/python-programming/syntax-recap"
