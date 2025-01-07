@@ -14,7 +14,7 @@ saga() {
     local python_recap="$saga_root/python-programming/syntax-recap"
     local rust_recap="$saga_root/rust-programming/rust-by-example"
     local sqlite_recap="$saga_root/sqlite-databases"
-    local vyper_recap="$saga_root/vyper-programming/cu-int-py-and-vy/sec-2-web3py"
+    local vyper_recap="$saga_root/web3/vyper/cu-int-py-and-vy/sec-2-web3py"
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
@@ -34,8 +34,10 @@ saga() {
                
 		saga --go
 		saga --mariadb
+		saga --postgresql
                 saga --python
 		saga --rust
+		saga --sqlite
                 saga --vyper
                 "
                 ;;
