@@ -8,22 +8,29 @@ alias project-one=""
 
 saga() {
     local saga_root="$HOME/dezly-saga"
+    local mariadb_recap="$saga_root/mariadb-databases"
+    local postgresql_recap="$saga_root/postgresql-databases"
     local python_recap="$saga_root/python-programming/syntax-recap"
     local rust_recap="$saga_root/rust-programming/rust-by-example"
+    local sqlite_recap="$saga_root/sqlite-databases"
     local vyper_recap="$saga_root/vyper-programming/cu-int-py-and-vy/sec-2-web3py"
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
     else
         case $1 in
+            --mariadb) cd $mariadb_recap && nvim . ;;
+            --postgresql) cd $postgresql_recap && nvim . ;;
             --python) cd $python_recap && nvim . ;;
             --rust) cd $rust_recap && nvim . ;;
+            --sqlite) cd $sqlite_recap && nvim . ;;
             --vyper) cd $vyper_recap && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
                 Valid Commands:
-                
+               
+		saga --mariadb
                 saga --python
 		saga --rust
                 saga --vyper
