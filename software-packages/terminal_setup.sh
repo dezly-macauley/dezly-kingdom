@@ -73,6 +73,10 @@ sudo pacman -S --needed fd
 # `nvim-telescope/telescope-fzf-native.nvim`
 sudo pacman -S --needed clang
 
+# Let's you format json in Neovim by pressing the following:
+# `:%!jq .` 
+sudo pacman -S --needed jq 
+
 #______________________________________________________________________________
 # Language support for bash
 sudo pacman -S --needed bash-language-server
