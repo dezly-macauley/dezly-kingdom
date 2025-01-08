@@ -11,5 +11,20 @@ background = 000000
 theme = "Firefly Traditional"
 
 # Hide the mouse while typing
-mouse-hide-while-typing = true
+mouse-hide-while-typing = 
 
+# NOTE: Alt + [n] = [n]ext tab
+keybind = alt+n=next_tab
+
+# NOTE: Alt + a = [a]dd tab
+keybind = alt+a=new_tab
+
+# NOTE: Alt + c = [a]dd tab
+keybind = alt+c=close_window
+
+# Valid modifiers are:
+#
+#     shift
+#     ctrl (alias: control)
+#     alt (alias: opt, option)
+#     super (alias: cmd, command)
