@@ -36,6 +36,7 @@ rules = [
 
     # Video Files
     { name = "*.mp4", use = "vlc" },
+    { name = "*.mpeg", use = "vlc" },
 
     # Image Files
     { name = "*.png", use = "viewnior" }

@@ -58,24 +58,25 @@ return {
 	    -- SECTION: Scripting
 
 		-- Bash
-		lsp.lua_ls.setup({
-		    capabilities = blink_cmp
-		})
-
-		-- Lua
 		lsp.bashls.setup({
 		    capabilities = blink_cmp
 		})
 
+		-- Lua
+		lsp.lua_ls.setup({
+		    capabilities = blink_cmp
+		})
+
+
 	    -------------------------------------------------------------------
 	    -- SECTION: Front-End Development
 
-		-- Svelte
+		-- TypeScript
 		lsp.denols.setup({
 		    capabilities = blink_cmp
 		})
 
-		-- TypeScript
+		-- Svelte
 		lsp.svelte.setup({
 		    capabilities = blink_cmp
 		})
@@ -96,7 +97,6 @@ return {
 		})
 
 	    -------------------------------------------------------------------
-
 	end
     }
 

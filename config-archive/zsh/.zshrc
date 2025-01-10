@@ -14,7 +14,9 @@ saga() {
     local python_recap="$saga_root/python-programming/syntax-recap"
     local rust_recap="$saga_root/rust-programming/rust-by-example"
     local sqlite_recap="$saga_root/sqlite-databases"
-    local vyper_recap="$saga_root/web3/vyper/cu-int-py-and-vy/sec-2-web3py"
+
+    local vyper_recap="$saga_root/web3/vyper/01-cu-intro-to-py-and-vy/sec1-favorites/"
+    local zig_recap="$saga_root/systems-programming/zig/zig-guide/02-language/"
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
@@ -27,6 +29,7 @@ saga() {
             --rust) cd $rust_recap && nvim . ;;
             --sqlite) cd $sqlite_recap && nvim . ;;
             --vyper) cd $vyper_recap && nvim . ;;
+            --zig) cd $zig_recap && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
@@ -39,6 +42,7 @@ saga() {
 		saga --rust
 		saga --sqlite
                 saga --vyper
+                saga --zig
                 "
                 ;;
         esac
@@ -228,6 +232,15 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # sudo pacman -S --needed zsh-syntax-highlighting
 source /usr/share/zsh/plugins/\
 zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#______________________________________________________________________________
+# SUB_SECTION: Uv
+
+# Enable shell auto completion for uv commands
+# eval "$(uv generate-shell-completion zsh)"
+
+# Enable shell auto completion for uvx commands
+# eval "$(uvx --generate-shell-completion zsh)"
 
 #______________________________________________________________________________
 # SUB_SECTION: Direnv 

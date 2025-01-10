@@ -20,7 +20,8 @@ return {
 		-- a function when you start typing 
 		-- `name_of_your_function(` and it will update
 		-- the menu as you add each arguement
-		signature = { enabled = true }
+		signature = { enabled = true },
+
 	    })
 	end
     }

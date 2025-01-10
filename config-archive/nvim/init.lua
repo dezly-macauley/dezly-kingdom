@@ -10,3 +10,24 @@ require("core-settings.01_leader_key")
 require("core-settings.02_neovim_options")
 require("core-settings.03_plugin_manager")
 require("core-settings.04_custom_keymaps")
+
+-------------------------------------------------------------------------------
+
+-- SECTION: Vyper Lsp
+
+-- local blink_cmp = require("blink.cmp").get_lsp_capabilities()
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.vy" },
+    callback = function()
+	vim.lsp.start({
+	    name = "vyper_lsp",
+	    cmd = { "vyper-lsp" },
+	    root_dir = vim.fs.dirname(vim.fs.find({ ".git" },
+	    { upward = true })[1]),
+	    capabilities = blink_cmp
+	})
+    end,
+})
+
+-------------------------------------------------------------------------------
