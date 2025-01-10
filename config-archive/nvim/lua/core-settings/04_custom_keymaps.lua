@@ -164,3 +164,50 @@ keymap(
 )
 
 -------------------------------------------------------------------------------
+-- SUB_SECTION: Trouble.nvim
+
+-- A pretty diagnostics, references, telescope results, 
+-- quickfix and location list to help you solve all the 
+-- trouble your code is causing. 
+
+keymap(
+    "n",
+    "<leader>t",
+    -- This will open the terminal without any line numbers
+    ":split<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i",
+    { desc = "Open the [t]erminal and switch to insert mode" }
+)
+
+	-- keys = {
+	--     {
+	-- 	"<cmd>Trouble diagnostics toggle<cr>",
+	-- 	desc = "Diagnostics (Trouble)",
+	--     },
+	--     {
+	-- 	"<leader>xX",
+	-- 	"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+	-- 	desc = "Buffer Diagnostics (Trouble)",
+	--     },
+	--     {
+	-- 	"<leader>cs",
+	-- 	"<cmd>Trouble symbols toggle focus=false<cr>",
+	-- 	desc = "Symbols (Trouble)",
+	--     },
+	--     {
+	-- 	"<leader>cl",
+	-- 	"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+	-- 	desc = "LSP Definitions / references / ... (Trouble)",
+	--     },
+	--     {
+	-- 	"<leader>xL",
+	-- 	"<cmd>Trouble loclist toggle<cr>",
+	-- 	desc = "Location List (Trouble)",
+	--     },
+	--     {
+	-- 	"<leader>xQ",
+	-- 	"<cmd>Trouble qflist toggle<cr>",
+	-- 	desc = "Quickfix List (Trouble)",
+	--     },
+	-- },
+
+-------------------------------------------------------------------------------

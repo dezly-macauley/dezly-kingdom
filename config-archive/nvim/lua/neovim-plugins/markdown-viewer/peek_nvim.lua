@@ -3,7 +3,6 @@ return {
     {
 	"toppair/peek.nvim",
 	enabled = true,
-
 	-- This will load the plugin only when a markdown file is opened 
 	ft = "markdown",
 
