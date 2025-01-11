@@ -39,7 +39,9 @@ rules = [
     { name = "*.mpeg", use = "vlc" },
 
     # Image Files
-    { name = "*.png", use = "viewnior" }
+    { name = "*.png", use = "viewnior" },
+    { name = "*.jpg", use = "viewnior" },
+    { name = "*.jpeg", use = "viewnior" }
 ]
 
 #______________________________________________________________________________

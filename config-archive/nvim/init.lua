@@ -15,7 +15,7 @@ require("core-settings.04_custom_keymaps")
 
 -- SECTION: Vyper Lsp
 
--- local blink_cmp = require("blink.cmp").get_lsp_capabilities()
+local blink_cmp = require("blink.cmp").get_lsp_capabilities()
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*.vy" },
