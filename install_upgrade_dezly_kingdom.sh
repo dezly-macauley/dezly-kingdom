@@ -37,6 +37,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 
 #______________________________________________________________________________
 # SECTION: Core Essentials
+./software-packages/firewall.sh
 ./software-packages/fonts_setup.sh
 ./software-packages/audio_setup.sh
 ./software-packages/image_setup.sh
