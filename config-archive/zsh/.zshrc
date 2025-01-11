@@ -1,4 +1,21 @@
 #______________________________________________________________________________
+# SECTION: Mount Points
+
+# The mount point of the external drive `sg-800`
+local mount_point_sg_800="/run/media/dezly-macauley/sg-800"
+
+#______________________________________________________________________________
+# SUB_SECTION: External Drive
+
+# Open the external drive
+alias sg-800="cd $mount_point_sg_800"
+
+# Safely Remove external drive
+alias safely-remove-sg-800="sync \
+&& udiskie-umount $mount_point_sg_800 \
+&& sync"
+
+#______________________________________________________________________________
 # SECTION: Current Projects
 
 alias project-one=""
