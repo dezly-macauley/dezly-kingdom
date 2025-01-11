@@ -13,7 +13,7 @@ sudo pacman -S --needed ufw
 # sudo ufw limit 22/tcp
 # This will protect Dezly Kingdom from brute-force password attacks. 
 
-sudo ufw limit 22/tcp
+sudo ufw deny 22/tcp
 
 #______________________________________________________________________________
 
