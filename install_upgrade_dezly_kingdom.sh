@@ -26,9 +26,12 @@ echo "Welcome to the Dezly Kingdom Installer"
 # or need to be installed from the AUR (Arch User Repository) 
 # using the AUR Helper Paru (Which has to be built from source using Rust)
 
+# Systems Programming
 ./software-packages/rust_setup.sh
+./software-packages/assembly_x86_64.sh
 ./software-packages/zig_setup.sh
 ./software-packages/go_setup.sh
+
 ./software-packages/python_setup.sh
 ./software-packages/lua_setup.sh
 

@@ -25,13 +25,7 @@ alias project-one=""
 
 saga() {
     local saga_root="$HOME/dezly-saga"
-    local go_recap="$saga_root/go-programming/syntax-recap"
-    local mariadb_recap="$saga_root/mariadb-databases"
-    local postgresql_recap="$saga_root/postgresql-databases"
-    local python_recap="$saga_root/python-programming/syntax-recap"
-    local rust_recap="$saga_root/rust-programming/rust-by-example"
-    local sqlite_recap="$saga_root/sqlite-databases"
-
+    local assembly_x86_64_recap="$saga_root/ethical-hacking/assembly/x86_64/"
     local vyper_recap="$saga_root/web3/vyper/01-cu-intro-to-py-and-vy/sec1-favorites/"
     local zig_recap="$saga_root/systems-programming/zig/zig-guide/02-language/"
 
@@ -39,12 +33,7 @@ saga() {
         cd $saga_root
     else
         case $1 in
-            --go) cd $go_recap && nvim . ;;
-            --mariadb) cd $mariadb_recap && nvim . ;;
-            --postgresql) cd $postgresql_recap && nvim . ;;
-            --python) cd $python_recap && nvim . ;;
-            --rust) cd $rust_recap && nvim . ;;
-            --sqlite) cd $sqlite_recap && nvim . ;;
+            --assembly-x86-64) cd $assembly_x86_64_recap && nvim . ;;
             --vyper) cd $vyper_recap && nvim . ;;
             --zig) cd $zig_recap && nvim . ;;
             *) 
@@ -52,12 +41,7 @@ saga() {
                 echo "
                 Valid Commands:
                
-		saga --go
-		saga --mariadb
-		saga --postgresql
-                saga --python
-		saga --rust
-		saga --sqlite
+                saga --assembly-x86-64
                 saga --vyper
                 saga --zig
                 "

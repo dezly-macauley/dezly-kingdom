@@ -19,7 +19,12 @@ return {
 		local blink_cmp = require("blink.cmp").get_lsp_capabilities()
 
 	    -------------------------------------------------------------------
-	    -- SECTION: Low-Level Systems Programming
+	    -- SECTION: Systems Programming
+
+		-- Assembly 
+		lsp.asm_lsp.setup({
+		    capabilities = blink_cmp
+		})
 
 		-- Rust
 		lsp.rust_analyzer.setup({
