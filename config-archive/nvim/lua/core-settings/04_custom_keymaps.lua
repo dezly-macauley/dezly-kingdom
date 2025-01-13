@@ -164,6 +164,15 @@ keymap(
 )
 
 -------------------------------------------------------------------------------
+keymap(
+    "n",
+    "<leader>t",
+    -- This will open the terminal without any line numbers
+    ":split<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i",
+    { desc = "Open the [t]erminal and switch to insert mode" }
+)
+-------------------------------------------------------------------------------
+
 -- SUB_SECTION: Trouble.nvim
 
 -- A pretty diagnostics, references, telescope results, 
@@ -172,17 +181,10 @@ keymap(
 
 keymap(
     "n",
-    "<leader>t",
-    -- This will open the terminal without any line numbers
-    ":split<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i",
-    { desc = "Open the [t]erminal and switch to insert mode" }
+    "<leader>xx",
+    ":Trouble diagnostics toggle<CR>",
+    { desc = "Diagnostics Trouble" }
 )
-
-	-- keys = {
-	--     {
-	-- 	"<cmd>Trouble diagnostics toggle<cr>",
-	-- 	desc = "Diagnostics (Trouble)",
-	--     },
 	--     {
 	-- 	"<leader>xX",
 	-- 	"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",

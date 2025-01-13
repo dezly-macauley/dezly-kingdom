@@ -31,13 +31,13 @@ require("lazy").setup({
 
     spec = {
 	-- List the directories in `neovim-plugins
-	{ import = "neovim-plugins.editor-themes" },
-	{ import = "neovim-plugins.visual-guides" },
 	{ import = "neovim-plugins.completion-assist" },
 	{ import = "neovim-plugins.language-support" },
 	{ import = "neovim-plugins.navigation-tools" },
 	{ import = "neovim-plugins.navigation-tools" },
-	{ import = "neovim-plugins.markdown-viewer"}
+	{ import = "neovim-plugins.markdown-viewer"},
+	{ import = "neovim-plugins.visual-guides" },
+	{ import = "neovim-plugins.editor-themes" },
     }
 
 })

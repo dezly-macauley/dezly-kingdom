@@ -25,15 +25,18 @@ alias project-one=""
 
 saga() {
     local saga_root="$HOME/dezly-saga"
-    local assembly_x86_64_recap="$saga_root/ethical-hacking/assembly/x86_64/"
-    local vyper_recap="$saga_root/web3/vyper/01-cu-intro-to-py-and-vy/sec1-favorites/"
-    local zig_recap="$saga_root/systems-programming/zig/zig-guide/02-language/"
+    
+    local assembly_x86_64_recap="$saga_root/ethical-hacking/assembly/x86_64"
+    local rust_recap="$saga_root/systems-programming/rust/rust-by-example"
+    local vyper_recap="$saga_root/web3/vyper/01-cu-intro-to-py-and-vy/sec1-favorites"
+    local zig_recap="$saga_root/systems-programming/zig/zig-guide/02-language"
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
     else
         case $1 in
             --assembly-x86-64) cd $assembly_x86_64_recap && nvim . ;;
+            --rust) cd $rust_recap && nvim . ;;
             --vyper) cd $vyper_recap && nvim . ;;
             --zig) cd $zig_recap && nvim . ;;
             *) 
@@ -42,6 +45,7 @@ saga() {
                 Valid Commands:
                
                 saga --assembly-x86-64
+                saga --rust
                 saga --vyper
                 saga --zig
                 "

@@ -49,6 +49,12 @@ return {
 		    capabilities = blink_cmp
 		})
 
+
+		-- AI 
+		-- lsp.mojo.setup({
+		--     capabilities = blink_cmp
+		-- })
+
 		-- Python
 		lsp.pyright.setup({
 		    capabilities = blink_cmp
