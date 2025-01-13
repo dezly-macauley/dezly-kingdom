@@ -65,6 +65,11 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./software-packages/aur_packages.sh
 
 #______________________________________________________________________________
+# SECTION: Ethical Hacking
+
+./software-packages/ethical_hacking_setup.sh
+
+#______________________________________________________________________________
 echo " "
 echo "Dezly Kingdom has been installed"
 echo "Please reboot your system if this is your first install"

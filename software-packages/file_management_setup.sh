@@ -18,3 +18,6 @@ sudo pacman -S --needed udiskie
 
 # Safely delete, restore, or permanently delete files from the command line
 sudo pacman -S --needed trash-cli
+
+# Extract rar files
+sudo pacman -S --needed unrar
