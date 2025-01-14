@@ -96,11 +96,18 @@ export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
 # NOTE: This is where programs from PyPI (The Python Package Index) 
 # will be installed to when you use the command:
 # `uv tool install name_of_program`
+export UV_TOOL_DIR="$HOME/.pypi-global-pkgs/tools"
 
-export UV_TOOL_DIR="$HOME/.pypi-global-pkgs"
+# This is where the binaries will be placed when the program 
+# has been installed.
+export UV_TOOL_BIN_DIR="$HOME/.pypi-global-pkgs/bin"
 
 # Add the binaries to the path
-export PATH="/home/dezly-macauley/.local/bin:$PATH"
+export PATH="$UV_TOOL_BIN_DIR:$PATH"
+
+# To confirm that everything has been configured properly run these commands:
+# `uv tool dir`
+# `uv tool dir --bin`
 
 #______________________________________________________________________________
 # SECTION: Configuration Management

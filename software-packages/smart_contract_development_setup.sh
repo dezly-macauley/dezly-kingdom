@@ -10,9 +10,6 @@ uv tool install vyper
 # Language support for Vyper
 uv tool install vyper-lsp
 
-# A cli interpreter for running Vyper files
-uv tool install titanoboa
-
 # A smart contract development framework for Vyper smart contracts
 uv tool install moccasin --prerelease=allow
 
