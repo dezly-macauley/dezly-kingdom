@@ -29,8 +29,9 @@ saga() {
     local assembly_x86_64_recap="$saga_root/ethical-hacking/assembly/x86_64"
     local rust_recap="$saga_root/systems-programming/rust/rust-by-example"
     local sqlite_recap="$saga_root/database-management/sqlite/af-hp-sqlite"
-    local vyper_recap="$saga_root/web3/vyper/01-cu-intro-to-py-and-vy/sec1-favorites"
+    local vyper_recap="$saga_root/smart-contract-development/vyper/02-cu-intermediate-py-and-vy/sec4-mox-favs"
     local zig_recap="$saga_root/systems-programming/zig/zig-guide/02-language"
+
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
@@ -56,13 +57,6 @@ saga() {
         esac
     fi
 }
-
-#______________________________________________________________________________
-# SECTION: Python Globally Installed Packages 
-
-# This where programs that are installed with `pip install name-of-program`
-# will be installed to
-# export PATH="$HOME/.pip-global-pkgs:$PATH"
 
 #______________________________________________________________________________
 # SECTION: Rust Installed Programs 
@@ -95,6 +89,18 @@ export PATH=$GOPATH/bin:$PATH
 # This where npm packages (JavaScript ecosystem) 
 # that are installed and need to be available system-wide will go
 export PATH="$HOME/.npm-global-pkgs/bin:$PATH"
+
+#______________________________________________________________________________
+# SECTION: Python Installed Programs 
+
+# NOTE: This is where programs from PyPI (The Python Package Index) 
+# will be installed to when you use the command:
+# `uv tool install name_of_program`
+
+export UV_TOOL_DIR="$HOME/.pypi-global-pkgs"
+
+# Add the binaries to the path
+export PATH="/home/dezly-macauley/.local/bin:$PATH"
 
 #______________________________________________________________________________
 # SECTION: Configuration Management
