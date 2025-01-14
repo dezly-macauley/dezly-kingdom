@@ -49,11 +49,9 @@ return {
 		    capabilities = blink_cmp
 		})
 
-
-		-- AI 
-		-- lsp.mojo.setup({
-		--     capabilities = blink_cmp
-		-- })
+		lsp.solidity_ls_nomicfoundation.setup({
+		    capabilities = blink_cmp
+		})
 
 		-- Python
 		lsp.pyright.setup({

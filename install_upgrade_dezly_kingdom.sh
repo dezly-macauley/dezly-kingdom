@@ -65,6 +65,11 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./software-packages/aur_packages.sh
 
 #______________________________________________________________________________
+# SECTION: Smart Contract Development
+
+./software-packages/smart_contract_development_setup.sh
+
+#______________________________________________________________________________
 # SECTION: Ethical Hacking
 
 ./software-packages/ethical_hacking_setup.sh
