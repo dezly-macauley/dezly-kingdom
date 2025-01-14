@@ -17,24 +17,30 @@ return {
 	    require'nvim-treesitter.configs'.setup {
 		ensure_installed = {
 		    -------------------------------------------------------
-		    -- Low-Level Systems Programming
-		    "asm", "rust", "zig", "c", "cpp", "go",
-
-		    -------------------------------------------------------
-		    -- AI and Web3
-		    "python", "solidity",
-
-		    -------------------------------------------------------
-		    -- Front-End Development
-		    "svelte", "typescript", "javascript",
-
-		    -- User Interface Design
-		    "css", "html",
+		    -- Systems Programming
+		    "rust", "zig", "c", "go", "asm",
 
 		    -------------------------------------------------------
 		    -- Database Management
 		    "sql",
 
+		    -------------------------------------------------------
+		    -- Smart Contract Development 
+
+		    "solidity",
+
+		    -------------------------------------------------------
+		    -- Web Development 
+
+		    "htmldjango",
+		    "svelte",
+
+		    "html",
+		    "css",
+		    "typescript", "javascript",
+		    "python",
+
+		    -------------------------------------------------------
 		    -- Data Serialization 
 		    "json", "toml", "gomod",
 

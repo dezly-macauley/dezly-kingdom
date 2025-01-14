@@ -26,7 +26,7 @@ alias project-one=""
 saga() {
     local saga_root="$HOME/dezly-saga"
     
-    local assembly_x86_64_recap="$saga_root/ethical-hacking/assembly/x86_64"
+    local assembly_x86_64_recap="$saga_root/systems-programming/x86_64_assembly"
     local rust_recap="$saga_root/systems-programming/rust/rust-by-example"
     local sqlite_recap="$saga_root/database-management/sqlite/af-hp-sqlite"
     local vyper_recap="$saga_root/smart-contract-development/vyper/02-cu-intermediate-py-and-vy/sec4-mox-favs"

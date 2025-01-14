@@ -22,3 +22,18 @@ sudo pacman -S --needed mariadb
 go install github.com/sqls-server/sqls@latest
 
 #______________________________________________________________________________
+# SECTION: Better CLI tools (Syntax Highligting and Autocompletion)
+
+# NOTE: `uv` must be installed
+# sudo pacman -S -needed `uv` 
+
+# SQLite
+uv tool install litecli
+
+# MySQL
+uv tool install mycli 
+
+# PostgreSQL 
+uv tool install pgcli
+
+#______________________________________________________________________________
