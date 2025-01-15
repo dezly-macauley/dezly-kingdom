@@ -26,32 +26,45 @@ alias project-one=""
 saga() {
     local saga_root="$HOME/dezly-saga"
     
-    local assembly_x86_64_recap="$saga_root/systems-programming/x86_64_assembly"
-    local rust_recap="$saga_root/systems-programming/rust/rust-by-example"
-    local sqlite_recap="$saga_root/database-management/sqlite/af-hp-sqlite"
-    local vyper_recap="$saga_root/smart-contract-development/vyper/02-cu-intermediate-py-and-vy/sec4-mox-favs"
-    local zig_recap="$saga_root/systems-programming/zig/zig-guide/02-language"
+    local assembly_x86_64_saga="$saga_root/systems-programming/x86_64_assembly"
+    local django_saga="$saga_root/web-development/django/meta-django-web-framework"
+    local rust_saga="$saga_root/systems-programming/rust/rust-by-example"
+    local sqlite_saga="$saga_root/database-management/sqlite/af-hp-sqlite"
+    local vyper_saga="$saga_root/smart-contract-development/vyper/02-cu-intermediate-py-and-vy/sec4-mox-favs"
+    local zig_saga="$saga_root/systems-programming/zig/zig-guide/02-language"
 
 
     if [[ $# -eq 0 ]]; then
         cd $saga_root
     else
         case $1 in
-            --assembly-x86-64) cd $assembly_x86_64_recap && nvim . ;;
-            --rust) cd $rust_recap && nvim . ;;
-            --sqlite) cd $sqlite_recap && nvim . ;;
-            --vyper) cd $vyper_recap && nvim . ;;
-            --zig) cd $zig_recap && nvim . ;;
+            --assembly-x86-64) cd $assembly_x86_64_saga && nvim . ;;
+	    --django) cd $django_saga && nvim . ;;
+            --rust) cd $rust_saga && nvim . ;;
+            --sqlite) cd $sqlite_saga && nvim . ;;
+            --vyper) cd $vyper_saga && nvim . ;;
+            --zig) cd $zig_saga && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
                 Valid Commands:
-               
-                saga --assembly-x86-64
+		
+		Systems Programming:
                 saga --rust
-                saga --sqlite
-                saga --vyper
                 saga --zig
+                saga --assembly-x86-64
+
+		Artificial Intelligence:
+		saga --tensorflow
+
+		Database Management:
+                saga --sqlite
+
+		Smart Contract Development:
+                saga --vyper
+
+		Web Development:
+                saga --django
                 "
                 ;;
         esac

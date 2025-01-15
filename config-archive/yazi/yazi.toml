@@ -10,11 +10,11 @@ show_hidden = true
 # This is where you list programs that can open files
 [opener]
 nvim = [
-    # This will open a new kitty terminal and then, 
+    # This will open a new Ghostty terminal and then, 
     # use Neovim to open the file
     # `ophan = true` just means that the program should 
     # open in a separate terminal.
-    { run = 'kitty nvim "$@"', orphan = true, for = "unix" }
+    { run = 'ghostty nvim "$@"', orphan = true, for = "unix" }
 ]
 
 vlc = [
@@ -22,8 +22,13 @@ vlc = [
     { run = 'vlc "$@"', orphan = true, for = "unix" }
 ]
 
-viewnior = [
+firefox = [
     # This will launch VLC to open media files
+    { run = 'firefox "$@"', orphan = true, for = "unix" }
+]
+
+viewnior = [
+    # This will launch Vienoir to open media files
     { run = 'viewnior "$@"', orphan = true, for = "unix" }
 ]
 
@@ -41,7 +46,11 @@ rules = [
     # Image Files
     { name = "*.png", use = "viewnior" },
     { name = "*.jpg", use = "viewnior" },
-    { name = "*.jpeg", use = "viewnior" }
+    { name = "*.jpeg", use = "viewnior" },
+
+    # Web pages
+    { name = "*.html", use = "firefox" },
+    { name = "*.url", use = "firefox" }
 ]
 
 #______________________________________________________________________________
