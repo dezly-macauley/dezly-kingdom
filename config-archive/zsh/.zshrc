@@ -195,6 +195,8 @@ function update_config_archive_neovim() {
 #______________________________________________________________________________
 # SECTION: Terminal Output Settings
 
+# alias litecli="litecli --liteclirc $HOME/dezly-saga/database-management/sqlite/af-hp-sqlite/.litecli_configs/.user_database"
+
 alias tree="tree --gitignore"  
 alias ls="lsd"
 #______________________________________________________________________________
@@ -223,6 +225,7 @@ alias bright-highest="brightnessctl set 100%"
 
 #______________________________________________________________________________
 # SECTION: Zsh Shell Settings
+
 #______________________________________________________________________________
 # SUB_SECTION: History
 
