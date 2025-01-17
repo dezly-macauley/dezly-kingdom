@@ -11,6 +11,8 @@ require("core-settings.02_neovim_options")
 require("core-settings.03_plugin_manager")
 require("core-settings.04_custom_keymaps")
 
+-- Set the theme style
+-- vim.g.material_style = "darker"
 -------------------------------------------------------------------------------
 
 -- SECTION: Vyper Lsp
