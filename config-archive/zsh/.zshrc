@@ -28,7 +28,7 @@ saga() {
     
     local assembly_x86_64_saga="$saga_root/systems-programming/x86_64_assembly"
     local django_saga="$saga_root/web-development/django/meta-django-web-framework"
-    local rust_saga="$saga_root/systems-programming/rust/rust-by-example"
+    local rust_saga="$saga_root/systems-programming/rust/rust-by-example/src/bin"
     local sqlite_saga="$saga_root/database-management/sqlite/af-hp-sqlite"
     local vyper_saga="$saga_root/smart-contract-development/vyper/02-cu-intermediate-py-and-vy/sec4-mox-favs"
     local zig_saga="$saga_root/systems-programming/zig/zig-guide/02-language"
