@@ -11,6 +11,17 @@ rustup default stable
 # This is needed by a Neovim plugin called `blink.cmp`
 # which provides autocompletion
 
+# NOTE: valgrind is not specific to Rust
+
+# A cli tool that checks for memory leaks in your program
+sudo pacman -S --needed valgrind
+
+# This let you use the `cargo-valgrind` command. 
+# It requires valgrind
+# Essentially this command first uses cargo run, 
+# and then uses valgrind to run the checks on that binary
+cargo install cargo-valgrind
+
 #______________________________________________________________________________
 
 # NOTE: You can uncomment this after your first install,
@@ -18,9 +29,6 @@ rustup default stable
 # you update your system
 
 # rustup install nightly
-
-#______________________________________________________________________________
-
 
 #______________________________________________________________________________
 
