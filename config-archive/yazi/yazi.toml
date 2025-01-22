@@ -36,8 +36,12 @@ viewnior = [
 # should use to open certain file types
 [open]
 rules = [
-    # Text Files
+    # Document Files
     { name = "*.md", use = "nvim" },
+    { name = "*.pdf", use = "firefox" },
+
+    # Music Files
+    { name = "*.mp3", use = "vlc" },
 
     # Video Files
     { name = "*.mp4", use = "vlc" },
