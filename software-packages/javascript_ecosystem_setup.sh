@@ -21,6 +21,19 @@ sudo pacman -S --needed deno
 # packages to `/usr`
 [ "$(npm config get prefix)" != "$HOME/.npm-global-pkgs" ] \
 && npm set prefix="$HOME/.npm-global-pkgs"
+#______________________________________________________________________________
+# SUB_SECTION: Install Bun
+
+if ! command -v bun &> /dev/null; then
+    echo "Bun is not installed. Installing now..."
+    npm install -g bun
+else
+    echo "Bun is already installed."
+    echo "Attempting to upgrade Bun."
+    bun upgrade
+fi
+
+#______________________________________________________________________________
 
 # JavaScript with syntax for types
 # This is also required by `svelte-language-server`
