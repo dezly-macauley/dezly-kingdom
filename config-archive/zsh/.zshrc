@@ -24,47 +24,39 @@ alias project-one=""
 # SECTION: Dezly Saga
 
 saga() {
+
+    # Root directory
     local saga_root="$HOME/dezly-saga"
+
+    # Sub-directories
+    local se_root="$saga_root/software-engineering"                            
+    local eh_root="$saga_root/ethical-hacking"
+    local pt_root="$saga_root/personal-training"
+
+    # Checkpoints
+    local cisco="$eh_root/cisco-ethical-hacker"
     
-    local assembly_x86_64_saga="$saga_root/systems-programming/x86_64_assembly"
-    local django_saga="$saga_root/web-development/django/meta-django-web-framework"
-    local rust_saga="$saga_root/systems-programming/rust/rust-by-example/src/bin"
-    local sqlite_saga="$saga_root/database-management/sqlite/af-hp-sqlite"
-    local vyper_saga="$saga_root/smart-contract-development/vyper/02-cu-intermediate-py-and-vy/sec4-mox-favs"
-    local zig_saga="$saga_root/systems-programming/zig/zig-guide/02-language"
-
-
     if [[ $# -eq 0 ]]; then
+	# If this function is called without any flags
+	# then go to the root directory.
         cd $saga_root
     else
         case $1 in
-            --assembly-x86-64) cd $assembly_x86_64_saga && nvim . ;;
-	    --django) cd $django_saga && nvim . ;;
-            --rust) cd $rust_saga && nvim . ;;
-            --sqlite) cd $sqlite_saga && nvim . ;;
-            --vyper) cd $vyper_saga && nvim . ;;
-            --zig) cd $zig_saga && nvim . ;;
+	    --cisco) cd $cisco && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
                 Valid Commands:
+		________________________________________
+		[ Software Engineering ]
 		
-		Systems Programming:
-                saga --rust
-                saga --zig
-                saga --assembly-x86-64
+		saga --rust
+		________________________________________
+		[ Ethical Hacking ]
 
-		Artificial Intelligence:
-		saga --tensorflow
-
-		Database Management:
-                saga --sqlite
-
-		Smart Contract Development:
-                saga --vyper
-
-		Web Development:
-                saga --django
+		saga --cisco
+		________________________________________
+		
                 "
                 ;;
         esac

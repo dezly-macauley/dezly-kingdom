@@ -350,3 +350,433 @@ _______________________________________________________________________________
 shutdown now
 ```
 _______________________________________________________________________________
+
+
+
+# Installing Arch (Linux)
+
+When you boot into Arch Linux from your bootable drive, 
+your prompt will look like this:
+
+```
+root@archisto ~#
+```
+
+## Step 1: Set your keyboard layout and increase terminal fonts size
+
+Set custom keyboard layout:
+```
+loadkeys mod-dh-matrix-us
+```
+
+Increase terminal font:
+```
+setfont ter-132b
+```
+
+---
+
+## Step 2: Setup your Wifi internet connection
+
+Enter the the Wifi setup prompt:
+```
+iwctl
+```
+
+After running that command, your terminal prompt will now look like this:
+```
+[iwd]#
+```
+
+Next run this command:
+```
+device list
+```
+
+This will show your Wifi devices. You should see something like "wlan0"
+
+---
+
+**NOTE:**
+
+"wlan0" is the name of the device that I will be using in this guide.
+Replace "wlan0" with the name of your device.
+
+---
+
+Check if the your device is powered on. To switch on the device if it is off,
+type the following:
+```
+device wlan0 set-property Powered on
+```
+
+Enable searching for Wifi networks:
+```
+station wlan0 scan
+```
+
+Get a list of Wifi Networks that you can connect to:
+```
+station wlan0 device get-networks
+```
+
+To connect to a specific the Wifi network on the list:
+
+**Note: Include the double quotes when you enter the name**
+
+```
+station wlan0 connect "name of the network"
+```
+
+E.g. 
+```
+station wlan0 connect "Hidden Rain Wifi"
+```
+
+You will be prompted for the password of that Wifi network.
+
+After you have entered that, your prompt will go back to looking like this:
+```
+[iwd]#
+```
+
+Type the following to get back to installing Linux:
+```
+exit
+```
+
+Now your prompt should be back to this:
+
+```
+root@archiso ~ #
+```
+
+To check that you are connected to the internet:
+```
+ping google.com
+```
+
+If you start seeing messages being repeated,
+then that means that you are connected to the internet.
+
+To exit this infinite loop, use these two keys: 
+```
+Press Ctrl+c
+```
+
+---
+
+## Step 3: Enter the guided Arch installer
+
+You should be starting off with a prompt that looks like this:
+```
+root@archiso ~#
+```
+
+Run this command to start the installer:
+```
+archinstall
+```
+
+You will be taken to a guided menu that reads:
+```
+Set/Modify the below options:
+```
+
+I will walk you through what to do for each option:
+
+---
+
+**Arch Install language:**
+```
+Leave this as English (100%)
+```
+
+---
+
+**Mirrors:**
+```
+Leave this alone
+```
+
+---
+
+**Locales:**
+
+**Keyboard Layout**
+```
+Choose mod-dh-matrix
+```
+
+Tip: press the "/" key to use the search functionality
+
+**Locales lanaguage:**
+```
+Choose en_GB.UTF-8
+```
+
+---
+
+**Locales encoding:**
+```
+Choose UTF-8
+```
+
+---
+
+**Disk Configuration:**
+
+**Select a partitioning option:**
+```
+Choose the one that says
+
+"Use a best-effort default partion layout"
+```
+
+---
+
+**Select one or more devices to use and configure:**
+```
+Select the one with the most space in GB. 
+That is your hardrive.
+
+It will usually be something like: "dev/nvme01n1"
+```
+
+---
+
+**Select which filestystem your main partion should use:**
+```
+Don't over-complicate things...
+
+Choose "ext4"
+
+```
+
+---
+
+**Would you like to create a seperate partition for "/home"?**
+```
+Choose "no"
+```
+
+---
+
+**Disk encryption:**
+```
+Again don't complicate things..
+
+Skip this
+```
+---
+
+**Bootloader:**
+```
+Leave this as "systemd-boot"
+
+```
+
+Whenever you hear Arch users talking about a broken boot,
+"grub" always seems to be somewhere in the conversation....
+
+---
+
+**Unified kernel images: false**
+
+Would you like to use unified kernel images?
+```
+Choose "no"
+```
+
+---
+
+**Hostname:**
+```
+Leave this as "archlinux"
+```
+
+---
+
+**Root password**
+```
+Skip this
+```
+
+---
+
+**User account:**
+
+Enter your username:
+```
+dezlymacauley
+```
+
+Enter a password (very slowly):
+
+Re-enter the password again:
+
+**Should "dezlymacauley" be a superuser (sudo)?**
+
+```
+Pick "yes (default)"
+```
+
+```
+Select "Confirm and exit"
+```
+
+---
+
+**Profile:**
+
+Type:
+```
+Pick "Minimal"
+```
+
+I'd rather install Hyprland from scratch to avoid any un-needed packages.
+
+---
+
+**Audio** 
+
+Choose an audio server:
+```
+Choose Pipewire
+```
+
+---
+
+Kernels: 
+```
+Linux
+```
+
+Just regular linux. Again, don't overcomplicate things.
+
+---
+
+Additional packages:
+```
+Skip this
+```
+
+You want the installation to be as quick as possible.
+
+---
+
+**Network Configuration:**
+
+```
+Make sure to pick "Use NetworkManager"
+```
+
+Or you will may have issues after the installation,
+if another Wifi is used in the future.
+
+---
+
+Timezone:
+
+```
+Use the search functionality to select "Europe/Athens"
+```
+
+---
+
+Automatic time sync (NTP):
+
+```
+True
+```
+
+---
+
+Optional Repositories:
+
+```
+Enable "multilib"
+```
+
+Leave everything else unchecked.
+
+---
+
+Scroll down to where it says "Install" and press Enter
+
+---
+
+When the installation is complete, you will see this:
+
+Would you like to chroot into the newly created installation and perform,
+post-install
+
+```
+Select "yes(default)"
+```
+
+---
+
+Your terminal will now look like this:
+
+```
+[root@archisto/]#
+```
+
+Type the following:
+```
+exit
+```
+
+---
+
+You should see a message that reads
+
+"Installation completed without any errors.
+You may now reboot"
+
+Your terminal prompt will also look like this now:
+```
+root@archisto ~#
+```
+
+Shutdown your computer with the following command:
+```
+shutdown now
+```
+
+Once your computer is off, unplug your bootable drive.
+
+---
+
+## Step 4: Post-Install Internet setup
+
+Switch your computer back on.
+
+Your terminal prompt will now look like this:
+
+```
+archlinux login:
+```
+
+Enter your username and password.
+
+---
+
+Your terminal prompt should now look like this:
+```
+[dezlymacauley@archlinux ~]$
+```
+
+---
+
+Now that you are logged in, use Network Manager to setup your internet:
+
+```
+nmtui
+```
+
+This is pretty intuitive. 
+Just select the Wifi you want to connect to and press Enter
+
+---
