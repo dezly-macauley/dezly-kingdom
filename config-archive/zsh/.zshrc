@@ -25,16 +25,13 @@ alias project-one=""
 
 saga() {
 
-    # Root directory
+    # Root directories
     local saga_root="$HOME/dezly-saga"
-
-    # Sub-directories
     local se_root="$saga_root/software-engineering"                            
-    local eh_root="$saga_root/ethical-hacking"
-    local pt_root="$saga_root/personal-training"
+    local sveltekit_root="$se_root/sveltekit"
 
     # Checkpoints
-    local cisco="$eh_root/cisco-ethical-hacker"
+    local sveltekit="$sveltekit_root/svelte-dev-tutorial"
     
     if [[ $# -eq 0 ]]; then
 	# If this function is called without any flags
@@ -42,7 +39,7 @@ saga() {
         cd $saga_root
     else
         case $1 in
-	    --cisco) cd $cisco && nvim . ;;
+	    --sveltekit) cd $sveltekit && nvim . ;;
             *) 
                 echo "Error: $1 is not a valid flag"
                 echo "
@@ -50,13 +47,8 @@ saga() {
 		________________________________________
 		[ Software Engineering ]
 		
-		saga --rust
+		saga --sveltekit
 		________________________________________
-		[ Ethical Hacking ]
-
-		saga --cisco
-		________________________________________
-		
                 "
                 ;;
         esac
