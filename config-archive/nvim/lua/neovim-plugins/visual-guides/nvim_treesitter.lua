@@ -43,7 +43,7 @@ return {
 		    -------------------------------------------------------
 		    -- Data Serialization 
 		    "json", "toml", "gomod",
-		    "gitignore",
+		    "gitignore", "ini",
 
 		    -------------------------------------------------------
 		    -- Scripting

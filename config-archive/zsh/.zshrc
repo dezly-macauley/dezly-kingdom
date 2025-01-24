@@ -29,12 +29,14 @@ saga() {
     local saga_root="$HOME/dezly-saga"
     local se_root="$saga_root/software-engineering"                            
     local rust_root="$se_root/rust"
+    local sqlite_root="$se_root/sqlite"
     local sveltekit_root="$se_root/sveltekit"
     local vyper_root="$se_root/vyper"
     local zig_root="$se_root/zig"
 
     # Checkpoints
     local rust="$rust_root/rust-by-example/src/bin"
+    local sqlite="$sqlite_root/af-high-performance-sqlite"
     local sveltekit="$sveltekit_root/svelte-dev-tutorial"
     local vyper="$vyper_root/cu-intermediate-py-vy/section-4-mox-favs"
     local zig="$zig_root/zig-guide/02-language"
@@ -46,6 +48,7 @@ saga() {
     else
         case $1 in
 	    --rust) cd $rust && nvim . ;;
+	    --sqlite) cd $sqlite && nvim . ;;
 	    --sveltekit) cd $sveltekit && nvim . ;;
 	    --vyper) cd $vyper && nvim . ;;
 	    --zig) cd $zig && nvim . ;;
@@ -57,6 +60,7 @@ saga() {
 		[ Software Engineering ]
 		
 		saga --rust
+		saga --sqlite
 		saga --sveltekit
 		saga --vyper
 		saga --zig
