@@ -28,10 +28,16 @@ saga() {
     # Root directories
     local saga_root="$HOME/dezly-saga"
     local se_root="$saga_root/software-engineering"                            
+    local rust_root="$se_root/rust"
     local sveltekit_root="$se_root/sveltekit"
+    local vyper_root="$se_root/vyper"
+    local zig_root="$se_root/zig"
 
     # Checkpoints
+    local rust="$rust_root/rust-by-example/src/bin"
     local sveltekit="$sveltekit_root/svelte-dev-tutorial"
+    local vyper="$vyper_root/cu-intermediate-py-vy/section-4-mox-favs"
+    local zig="$zig_root/zig-guide/02-language"
     
     if [[ $# -eq 0 ]]; then
 	# If this function is called without any flags
@@ -39,15 +45,21 @@ saga() {
         cd $saga_root
     else
         case $1 in
+	    --rust) cd $rust && nvim . ;;
 	    --sveltekit) cd $sveltekit && nvim . ;;
+	    --vyper) cd $vyper && nvim . ;;
+	    --zig) cd $zig && nvim . ;;
             *) 
-                echo "Error: $1 is not a valid flag"
+                echo "Error: saga $1 is not a valid command"
                 echo "
                 Valid Commands:
 		________________________________________
 		[ Software Engineering ]
 		
+		saga --rust
 		saga --sveltekit
+		saga --vyper
+		saga --zig
 		________________________________________
                 "
                 ;;
