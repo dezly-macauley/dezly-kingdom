@@ -73,13 +73,17 @@ _______________________________________________________________________________
 
 #### How to update your entire system
 
-This command will update packages installed from both `pacman`
-and `paru` (AUR packages)
 ```
 paru -Syu
 ```
+This command will do the following:
+1. Update packages that were installed using `pacman` (regular packages)
+2. Update packages that were installed `paru` (AUR packages)
 
-Do NOT use `pacman -Syu` because this will not updated AUR packages.
+_______________________________________________________________________________
+#### WARNING
+
+Do NOT use `pacman -Syu` because this will not update AUR packages!
 
 _______________________________________________________________________________
 #### How to uninstall packages

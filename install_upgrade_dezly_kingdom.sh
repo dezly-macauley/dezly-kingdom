@@ -75,6 +75,11 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./software-packages/ethical_hacking_setup.sh
 
 #______________________________________________________________________________
+# SECTION: Content Creation
+
+./software-packages/content_creation_setup.sh
+
+#______________________________________________________________________________
 echo " "
 echo "Dezly Kingdom has been installed"
 echo "Please reboot your system if this is your first install"
