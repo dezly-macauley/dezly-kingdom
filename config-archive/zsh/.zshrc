@@ -92,6 +92,12 @@ function saga() {
 }
 
 #______________________________________________________________________________
+# SECTION: Screenshots
+
+export HYPRSHOT_DIR="$HOME/content-creation/screenshots"
+
+#______________________________________________________________________________
+
 # SECTION: Rust Installed Programs 
 
 # This where Rust programs that are installed and need to be available

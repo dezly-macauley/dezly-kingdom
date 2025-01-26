@@ -12,5 +12,7 @@ sudo pacman -S --needed xdg-desktop-portal-gtk
 sudo pacman -S --needed wl-clipboard
 sudo pacman -S --needed wl-clip-persist
 
-sudo pacman -S --needed dunst
+# Displays notifications
+sudo pacman -S --needed swaync 
+
 sudo pacman -S --needed wofi
