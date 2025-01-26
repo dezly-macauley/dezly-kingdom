@@ -1,15 +1,16 @@
 #!/bin/sh
 #______________________________________________________________________________
+# SECTION: Video
+
 # Video recording
 sudo pacman -S --needed obs-studio
 
-#______________________________________________________________________________
 # Video editing
-
-# The most popular video editing tool on OBS
 sudo pacman -S --needed kdenlive
 
 #______________________________________________________________________________
+# SECTION: Images
+
 # Image editing
 sudo pacman -S --needed gimp
 

@@ -125,6 +125,13 @@ keymap(
     tsb.find_files,
     { desc = "[s]earch [f]iles in directory" }
 )
+
+keymap(
+    "n", "<leader>sw",
+    tsb.live_grep,
+    { desc = "[s]earch [w]ord in directory" }
+)
+
 keymap(
     "n", "<leader>sd",
     tsb.diagnostics,

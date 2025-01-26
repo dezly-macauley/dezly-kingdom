@@ -19,6 +19,8 @@ sudo pacman -S --needed mariadb
 # SECTION: Language support for SQL
 
 # NOTE: `go_setup.sh` and `terminal_setup.sh` must be installed
+
+# NOTE: Uncomment this when you want to upgrade
 go install github.com/sqls-server/sqls@latest
 
 #______________________________________________________________________________

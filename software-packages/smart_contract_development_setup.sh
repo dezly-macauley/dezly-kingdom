@@ -23,12 +23,19 @@ uv tool install moccasin --prerelease=allow
 
 # The Solidity compiler
 # The package is called `solc` but the cli is called `solcjs`
-npm install -g solc
+
+# NOTE: uncomment this line when you want to upgrade
+# npm install -g solc
  
+#______________________________________________________________________________
+
 # Solidity language support provided by the Nomic Foundation
 # This was originally created for Hardhat projects but it works with
 # Foundry projects as well.
-npm install -g @nomicfoundation/solidity-language-server
+
+# NOTE: uncomment this line when you want to upgrade
+# npm install -g @nomicfoundation/solidity-language-server
+
 #______________________________________________________________________________
 
 # SECTION: Foundry (Smart Contract development framework for Solidity)
@@ -37,6 +44,7 @@ npm install -g @nomicfoundation/solidity-language-server
 # otherwise you will download the latest version of `foundry` 
 # (A web3 framework) every time you update your system
 
+# NOTE: uncomment this line when you want to upgrade
 # cargo install --git https://github.com/foundry-rs/foundry --profile release --locked forge cast chisel anvil
 
 #______________________________________________________________________________

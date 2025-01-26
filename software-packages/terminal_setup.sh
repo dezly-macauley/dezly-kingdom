@@ -41,7 +41,6 @@ sudo pacman -S --needed direnv
 sudo pacman -S --needed acpi 
 sudo pacman -S --needed brightnessctl
 
-
 #______________________________________________________________________________
 # Output Appearance
 #

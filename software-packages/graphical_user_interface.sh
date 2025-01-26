@@ -14,4 +14,3 @@ sudo pacman -S --needed wl-clip-persist
 
 sudo pacman -S --needed dunst
 sudo pacman -S --needed wofi
-
