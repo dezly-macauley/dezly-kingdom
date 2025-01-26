@@ -16,14 +16,34 @@ alias safely-remove-sg-800="sync \
 && sync"
 
 #______________________________________________________________________________
+
+
+
+#______________________________________________________________________________
 # SECTION: Current Projects
 
 alias project-one=""
 
 #______________________________________________________________________________
+# SECTION: Virtual Machines
+
+function vm_services_start() {
+    sudo systemctl start libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket
+    sudo systemctl start libvirtd dnsmasq iptables
+    echo "libvirt, dnsmasq, and iptables services have been started."
+    echo "You can now use Virtual Machine Manager to create and run VMs"
+}
+
+function vm_services_stop() {
+    sudo systemctl stop libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket
+    sudo systemctl stop libvirtd dnsmasq iptables
+    echo "libvirt, dnsmasq, and iptables services have been stopped."
+}
+
+#______________________________________________________________________________
 # SECTION: Dezly Saga
 
-saga() {
+function saga() {
 
     # Root directories
     local saga_root="$HOME/dezly-saga"
@@ -58,7 +78,7 @@ saga() {
                 Valid Commands:
 		________________________________________
 		[ Software Engineering ]
-		
+	
 		saga --rust
 		saga --sqlite
 		saga --sveltekit

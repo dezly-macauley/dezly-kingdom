@@ -7,6 +7,7 @@ My digital kingdom that uses the following technologies at the foundation:
 - **Arch Linux** - Operating System
 - **Hyprland** - Window Manager
 - **Neovim** - Code Editor
+- **QEMU** - For running Kali Linux Virtual Machines
 
 _______________________________________________________________________________
 ## Technologies Used
