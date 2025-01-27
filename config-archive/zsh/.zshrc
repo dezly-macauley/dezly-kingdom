@@ -160,6 +160,7 @@ alias edit-zsh="cd $HOME && nvim .zshrc"
 # Graphical Applications
 alias edit-ghostty="cd $HOME/.config/ghostty/ && nvim config"
 alias edit-hyprland="cd $HOME/.config/hypr/ && nvim hyprland.conf"
+alias edit-swaylock="cd $HOME/.config/swaylock && nvim config"
 
 # Terminal Applications
 alias edit-neovim="cd $HOME/.config/nvim && nvim init.lua"
@@ -176,6 +177,7 @@ function update_config_archive() {
     update_config_archive_zsh
     update_config_archive_ghostty
     update_config_archive_hyprland
+    update_config_archive_swaylock
     update_config_archive_yazi
     update_config_archive_neovim
     echo " "
@@ -206,6 +208,12 @@ function update_config_archive_hyprland() {
     echo "🖼️ config-archive/hyprland has been updated"
 }
 
+function update_config_archive_swaylock() {
+    rm -rf $HOME/.dezly-kingdom/config-archive/swaylock
+    cp -r $HOME/.config/swaylock ~/.dezly-kingdom/config-archive
+    echo "🔒 config-archive/swaylock has been updated"
+}
+
 function update_config_archive_yazi() {
     rm -rf $HOME/.dezly-kingdom/config-archive/yazi/
     cp -r $HOME/.config/yazi/ $HOME/.dezly-kingdom/config-archive
@@ -228,7 +236,8 @@ alias ls="lsd"
 #______________________________________________________________________________
 # SECTION: Status Info
 
-alias date-time='echo "⌚ $(date +"%A, %d %B %Y ( %I:%M:%S %p )")"'
+# alias date-time='echo "⌚ $(date +"%A, %d %B %Y ( %I:%M:%S %p )")"'
+alias date-time='echo "⌚ $(date)"'
 alias battery-life="acpi"
 
 #______________________________________________________________________________

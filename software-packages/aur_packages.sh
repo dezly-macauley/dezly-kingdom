@@ -18,3 +18,9 @@ paru -S --needed hyprshot
 paru -S --needed catppuccin-gtk-theme-mocha
 
 #______________________________________________________________________________
+# Screen lock
+
+# Allows you to lock and unlock your screen
+paru -S --needed swaylock-effects 
+
+#______________________________________________________________________________

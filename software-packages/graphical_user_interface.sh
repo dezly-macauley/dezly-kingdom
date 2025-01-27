@@ -21,9 +21,6 @@ sudo pacman -S --needed wofi
 # For GUI applications that require user permissions
 sudo pacman -S --needed hyprpolkitagent
 
-# Allows you to lock and unlock your screen
-sudo pacman -S --needed swaylock
-
 # Allows you to set themes for GUI applications 
 # like virt-manager and pavucontrol
 sudo pacman -S --needed nwg-look

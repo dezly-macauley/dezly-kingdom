@@ -1,0 +1,45 @@
+# The indicator is the circle that appears when you start typing your password
+# This line makes sure that the indicator is always visible
+indicator
+
+# Sets the horizontal position of the indicator.
+indicator-x-position=1200
+
+# Sets the vertical position of the indicator.
+indicator-y-position=150
+
+# Increases the size of the circle
+indicator-radius=130
+
+# Increase the thickness of the outer ring
+indicator-thickness=20
+
+# Adds a clock to the center of the circle
+clock
+
+# Prevents the indicator from trying to process an empty password
+ignore-empty-password
+
+# Sets the image to use for the lock screen
+image=$HOME/.config/swaylock/lockscreen_background.jpg
+
+# The color of the outer ring
+ring-color=600175
+
+# The color of the text inside the ring
+text-color=f5deff
+
+# Blurs the image
+# The syntax is <radius>x<times>
+# effect-blur=7x4
+
+# When you type your password, 
+# parts of the ring will be highlighted in this color
+key-hl-color=b300ff
+
+# How many seconds the screen should take to fade in
+fade-in=0.25
+
+# NOTE: This line below has nothing to do with the configuration.
+# It just tells Neovim to to treat this file as an ini file
+# vi: ft=ini

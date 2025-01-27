@@ -1,5 +1,13 @@
 #!/bin/sh
 
+#______________________________________________________________________________
+# NOTE: Required for building from source
+
+#A cross-platform open-source make system
+sudo pacman -S --needed cmake
+
+#______________________________________________________________________________
+
 # SECTION: Source-built packages
 
 # SUB_SECTION: Paru (AUR Helper)
