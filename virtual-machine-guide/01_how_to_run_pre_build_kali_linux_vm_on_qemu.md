@@ -34,7 +34,70 @@ NOTE: It's technically a UEFI but in people still call it BIOS.
 It's that menu that you get when you laptop is starting and you press F12.
 
 _______________________________________________________________________________
-## Step 2 - Install the packages needed for QEMU 
+## Step 2 - Install the packages needed for working with Virtual Machines
+
+```sh
+# QEMU is the virtual machine emulator
+# Allows you to run different Operating Systems and architectures
+sudo pacman -S --needed qemu-full
+
+# A GUI (Graphical User Interface) tool for managing virtual machines
+sudo pacman -S --needed virt-manager
+
+# A simple tool for viewing and interacting with virtual machines
+sudo pacman -S --needed virt-viewer
+
+# A virtual network switch for virtual machines
+# This is needed if you want your VMs to communicate 
+# with each other or the outside network 
+sudo pacman -S --needed vde2
+
+# A tool for filtering and managing Ethernet frames at the data link layer.
+# helps control how network traffic flows between virtual machines 
+# and your physical network
+sudo pacman -S --needed ebtables
+
+# A tool for managing network packet filtering (firewalls) 
+# and network address translation (NAT).
+# It's necessary for setting up things like NAT,
+# which allows your VMs to access the internet through your host machine.
+sudo pacman -S --needed iptables-nft
+
+# A modern framework for managing firewalls and network traffic, 
+# replacing iptables
+# It's part of the backend for modern Linux networking. 
+# Even if you use iptables-nft, this is the underlying technology
+sudo pacman -S --needed nftables
+
+# A lightweight tool for DNS (Domain Name System) 
+# and DHCP (Dynamic Host Configuration Protocol).
+# This sets up automatic IP addresses and networking for your VMs, 
+# so they can connect to the internet or talk to each other easily.
+sudo pacman -S --needed dnsmasq
+
+# Tools for creating and managing network bridges.
+# A network bridge lets your VMs act 
+# like they're on the same network as your host,
+# which can be useful for advanced networking setups.
+sudo pacman -S --needed bridge-utils
+
+# Open Virtual Machine Firmware, which provides UEFI support 
+# for virtual machines.
+# Many modern operating systems require UEFI instead of BIOS. 
+# This allows your VMs to boot those systems.
+sudo pacman -S --needed ovmf
+
+# A software-based TPM (Trusted Platform Module).
+# Some operating systems (e.g., Windows 11) 
+# require a TPM for security features. 
+# This package emulates one so you can install those OSes without issues.
+sudo pacman -S --needed swtpm
+
+# For extracting `.7z` files
+# Pre-built Kali Linux virtual machines are in this format
+sudo pacman -S --needed 7zip 
+```
+
 
 _______________________________________________________________________________
 ## Step 3 - Configure the `libvirt daemon`
@@ -185,88 +248,11 @@ _______________________________________________________________________________
 sudo virsh net-autostart default
 ```
 _______________________________________________________________________________
-
-Reboot your system
+### Reboot your system
 _______________________________________________________________________________
+## Step 8 - Download a pre-built Kali Linux Virtual Machine
 
-
-
-
-## Step 2 - Create a default network
-
-Run this command:
-```sh
-echo '<network>
-  <name>default</name>
-  <bridge name="virbr0" stp="on" delay="0"/>
-  <ip address="192.168.122.0" netmask="255.255.255.0">
-    <dhcp>
-      <range start="192.168.122.2" end="192.168.122.254"/>
-    </dhcp>
-  </ip>
-</network>' | sudo tee /etc/libvirt/qemu/networks/default.xml > /dev/null
-```
-
-_______________________________________________________________________________
-
-Then make sure to define the network
-```sh
-sudo virsh net-define /etc/libvirt/qemu/networks/default.xml
-```
-
-_______________________________________________________________________________
-
-Run this command to check if it being detected:
-```sh
-sudo virsh net-list --all
-```
-
-The output should look like this:
-
-```sh
- Name      State      Autostart   Persistent
-----------------------------------------------
- default   inactive   no          yes
-```
-
-_______________________________________________________________________________
-## Step 3 - Create start and stop functions in your `.zshrc`
-
-Open your `.zshrc` file and add the following to the file:
-
-```sh
-function vm_services_start() {
-    sudo systemctl start libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket
-    sudo systemctl start libvirtd dnsmasq iptables
-    echo "libvirt, dnsmasq, and iptables services have been started."
-    echo "You can now use Virtual Machine Manager to create and run VMs"
-}
-
-function vm_services_stop() {
-    sudo systemctl stop libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket
-    sudo systemctl stop libvirtd dnsmasq iptables
-    echo "libvirt, dnsmasq, and iptables services have been stopped."
-}
-```
-_______________________________________________________________________________
-Open the terminal and run the `vm_services_start` function like this:
-```sh
-vm_services_start
-```
-
-The purpose of these functions is to allow you to disable the virtual
-machine functionality on your system when you are not using a virtual machine,
-and to re-activate those services when you need to use a virtual machine.
-
-_______________________________________________________________________________
-Run this command to check if the network is active:
-```sh
-sudo virsh net-list --all
-```
-
-_______________________________________________________________________________
-## Step 4 - Download a pre-built Kali Linux Virtual Machine
-
+Go to this link:
 ```
 https://www.kali.org/get-kali/#kali-virtual-machines
 ```
@@ -278,7 +264,7 @@ It will look something like this:
 https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-qemu-amd64.7z
 ```
 _______________________________________________________________________________
-## Step 5 - Create a directory in your home directory called `virtual-machines`
+## Step 9 - Create a `virtual-machines` directory in your home directory
 
 ```
 cd ~
@@ -291,37 +277,56 @@ And put the downloaded file inside the `virtual-machines` directory
 ❯ ls
 kali-linux-2024.4-qemu-amd64.7z
 ```
+
 _______________________________________________________________________________
-## Step 6 - Open the `Virtual Machine Manager` program
+Since this is a pre-built virtual machine, 
+you'll want to extract the archive using a tool like `7z`
+
+```sh
+cd virtual-machines
+7z x kali-linux-2024.4-qemu-amd64.7z
+```
+
+After doing that you should have a `.qcow2` file
+
+```
+kali-linux-2024.4-qemu-amd64.7z
+kali-linux-2024.4-qemu-amd64.qcow2
+```
+
+You can delete the `.7z` file
+
+_______________________________________________________________________________
+## Step 10 - Open the `Virtual Machine Manager` program
 
 You should see `QEMU/KVM` listed. 
 
 Click on it and make sure that it is connected.
 
-<img src="./images/01.png" width="1000" height="400" />
+<img src="./images/01.png" width="500" height="200" />
 
 If `QEMU/KVM` is not listed for some reason.
 
-Click `File`, then click on `Add Connection`
+Click `File`, then click on `Add Connection` and select `QEMU`
 
 _______________________________________________________________________________
-## Step 7 - Create a virtual machine pool
+## Step 11 - Create a virtual machine pool
 
 Click `File`, then click `New Virtual Machine`
 
+Then select the option `Import existing disk image`
+
 <img src="./images/02.png" width="500" height="400" />
 
-Click `Forward`
+Then click `Forward`
 
 _______________________________________________________________________________
-
 Click `Browse`
 
 <img src="./images/03.png" width="500" height="400" />
 
 _______________________________________________________________________________
-
-Click the plus icon right at the bottom. 
+Click the plus icon right at the bottom row. 
 
 It's should display the text `Add Pool` if you hover over it.
 <img src="./images/04.png" width="500" height="400" />
@@ -347,92 +352,42 @@ pre-built kali-linux machine listed under `Volumes`
 Click the kali-linux machine and then click `Choose Volume`
 
 _______________________________________________________________________________
-You will be taken back to the `Create a new virtual machine` menu
+You will be taken back to this menuu
 
 Where it says `choose the operating system you are installing`
 
-**Uncheck** the option that says `Automatically detect from the installation media / source`
+You will notice that if you search for `Kali Linux` nothing will show up.
 
 Most VM emulators will fail to automatically detect Kali because Kali Linux,
 because Kali is actually a spin-off / fork of Linux distro called `Debian`.
 
 To be even more specific, Kali Linux is based of the `testing` branch of Debian
 
-_______________________________________________________________________________
-
-So click the menu and select `Debian testing`, then select `Forward`
+So select `Debian testing`
 
 <img src="./images/07.png" width="500" height="400" />
 
-_______________________________________________________________________________
-
-If you get a message like this, just click `Yes`
-
-<img src="./images/08.png" width="500" height="400" />
+Then click `Forward`
 
 _______________________________________________________________________________
-
-`Choose Memory and CPU setting`
+I use this for memory and CPU settings:
 
 - Memory: 3072 Mib
 - CPUs:   2 CPU
 
+<img src="./images/08.png" width="500" height="400" />
+
+Click `Forward`
+
+_______________________________________________________________________________
+
+Rename the virtual machine. 
+
+I call mine `kali-linux-tcm-sec` as 
+I will be using this to study ethical hacking from TCM Security.
+
 <img src="./images/09.png" width="500" height="400" />
 
-Click `Forward`
-
-_______________________________________________________________________________
-
-- Make sure that `Enable storage for this virtual machine` is **checked**
-
-- Check the option that says create `custom storage`
-
-<img src="./images/10.png" width="500" height="400" />
-
-Click `Manage`
-
-_______________________________________________________________________________
-Click the plus icon that is next to `Volumes`.
-
-It should say `Create new volume`
-
-<img src="./images/06.png" width="500" height="400" />
-
-_______________________________________________________________________________
-
-Give it a name, and about `60GB` that is allocated immediately
-
-<img src="./images/11.png" width="500" height="400" />
-
 Click `Finish`
-
-_______________________________________________________________________________
-Make sure to select the `qcow2` volume that you created. 
-
-**Do not select the raw!**
-
-<img src="./images/12.png" width="500" height="400" />
-
-Then click `Choose Volume`
-
-_______________________________________________________________________________
-You will be taken back to this screen. 
-
-Click `Forward`
-
-<img src="./images/13.png" width="500" height="400" />
-
-_______________________________________________________________________________
-
-Select or create custom storage:
-
-Chose the virtual-machines directory again
-
-Click the + (add new volumes)
-
-Name: kali-linux
-Capacity: 50 GB
-
-Choose the volume
 
 _______________________________________________________________________________

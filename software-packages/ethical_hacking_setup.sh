@@ -58,4 +58,8 @@ sudo pacman -S --needed ovmf
 # This package emulates one so you can install those OSes without issues.
 sudo pacman -S --needed swtpm
 
+# For extracting `.7z` files
+# Pre-built Kali Linux virtual machines are in this format
+sudo pacman -S --needed 7zip 
+
 #______________________________________________________________________________
