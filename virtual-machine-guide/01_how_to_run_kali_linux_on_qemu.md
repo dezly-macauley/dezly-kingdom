@@ -132,21 +132,62 @@ This will start the service now:
 sudo systemctl start libvirtd
 ```
 _______________________________________________________________________________
+## Step 6 - Ensure that you can start virtual machines with your own user
 
+Without this step you will have to use the root user every time you want to
+start a virtual machine.
 
+Open qemu.conf:
+```
+sudo nvim  /etc/libvirt/qemu.conf
+```
 
+Search for the follwing lines:
+```sh
+## Some examples of valid values are:
+#       user = "qemu" # A user named "qemu"
+#       user = "+0" # Super user (uid=0)
+#       user = "100" # A  user named "100" or a user with a uid=100
+# user = "libvirt-qemu"
+```
+Uncomment the last line, and enter your user name so that it looks like this:
+```sh
+## Some examples of valid values are:
+#       user = "qemu" # A user named "qemu"
+#       user = "+0" # Super user (uid=0)
+#       user = "100" # A  user named "100" or a user with a uid=100
+user = "dezly-macauley"
+```
+_______________________________________________________________________________
+Next search for the lines:
+```sh
+# The group for QEMU processess run by the system instance.
+# It can be specified in a similar way to user.
+# group = "libvirt-qemu"
+```
 
+Uncomment these lines so that it looks like this:
+```sh
+# The group for QEMU processess run by the system instance.
+# It can be specified in a similar way to user.
+group = "dezly-macauley"
+```
+_______________________________________________________________________________
+Save the file and restart the libvirt daemon:
 
+```sh
+sudo systemctl restart libvirtd
+```
+_______________________________________________________________________________
+## Step 7 - Ensure that your virtual machines have a network connection
 
+```sh
+sudo virsh net-autostart default
+```
+_______________________________________________________________________________
 
-
-
-
-
-
-
-
-
+Reboot your system
+_______________________________________________________________________________
 
 
 
