@@ -36,39 +36,121 @@ It's that menu that you get when you laptop is starting and you press F12.
 _______________________________________________________________________________
 ## Step 2 - Install the packages needed for QEMU 
 
-NOTE: I use Arch (by the way...) so these are the packages needed for
-Arch Linux. If you are using `Dezly Kingdom`, these are already installed.
+_______________________________________________________________________________
+## Step 3 - Configure the `libvirt daemon`
 
-```bash
-# A machine emulator and virtualizer
-# By using dynamic translation, it can create virtual machines that run
-# at close to native performance (which is better than VirtualBox).
-# The `qemu-full` package can create virtual machines for architectures 
-# outside of the usual x86_64 architecture
-sudo pacman -S --needed pacman qemu-full
+The libvirt daemon is responsible for managing virtual machines 
+and other virtualization technologies on Linux.
 
-# A set of libraries and tools) that manages virtual machines
-# libvirt interacts with QEMU behind the scenes, 
-# making sure everything runs smoothly, 
-# while QEMU focuses on running the virtual machine.
-# It works in the background and is used by Graphical User Interfaces like
-# Virt-Manager.
-sudo pacman -S --needed libvirt
+By editing the file, you can change the permissions and group ownership
+for the Unix socket that libvirt uses for communication.
 
-# A graphical user interface (GUI) for libvirt.
-# It communicates with libvirt so that you don't have to enter any commands.
-sudo pacman -S --needed virt-manager
-
-# Gives your Virtual Machine an IP address 
-# and handles DNS for internet access.
-sudo pacman -S --needed dnsmasq 
-
-# Controls the flow of network traffic and secures connections.
-# Works with `dnsmasq` to ensure that your VM can access the internet 
-# and stay protected.
-sudo pacman -S --needed iptables
+Open this file:
+```sh
+sudo nvim /etc/libvirt/libvirtd.conf
 ```
 _______________________________________________________________________________
+
+Look for these lines in the file:
+
+This setting determines which group is allowed to access the Unix socket 
+used by libvirt for communication. 
+
+By default, this is commented out and the socket is restricted to root.
+```ini
+# This is restricted to 'root' by default
+# unix_sock_group = "libvirt"
+```
+
+Uncomment the last line so it looks like this:
+```ini
+# This is restricted to 'root' by default
+unix_sock_group = "libvirt"
+```
+
+This allows non-root users who are in the libvirt group to interact 
+with libvirt and manage virtual machines (VMs), 
+without needing full root privileges.
+
+NOTE: You will add your Arch Linux username to this later in this guide.
+
+_______________________________________________________________________________
+Next look for the following lines:
+```ini
+# If not using PolicyKit and setting group ownership for access
+# control, then you may want to relax this too.
+# unix_sock_rw_perms = "0770"
+```
+
+Uncomment the last line so it looks like this:
+```ini
+# If not using PolicyKit and setting group ownership for access
+# control, then you may want to relax this too.
+unix_sock_rw_perms = "0770"
+```
+
+This setting defines the read-write permissions for the libvirt Unix socket. 
+- 0: No permissions for others (world).
+- 7: Full permissions (read, write, execute) for the owner (user root).
+- 7: Full permissions for the group (users in the libvirt group).
+
+_______________________________________________________________________________
+Once you have done both of the above, 
+save the file.
+
+_______________________________________________________________________________
+## Step 4 - Add your user to the groups `KVM` and `libvirt`
+
+```sh
+sudo usermod -a -G kvm,libvirt $(whoami)
+```
+
+`-a` means that the user should be appended to the group.
+Without this flag the command will replace all other existing users in the
+group.
+
+`-G` kvm,libvirt
+
+kvm: The kvm group grants access to virtualization-related tasks. 
+Specifically, users in the kvm group are allowed to run virtual machines 
+with KVM (Kernel-based Virtual Machine) capabilities.
+
+libvirt: The libvirt group is used to manage access to libvirt, 
+a virtualization API that interfaces with hypervisors like KVM. 
+Adding your user to this group allows you to manage virtual machines 
+with libvirt (via tools like virt-manager).
+_______________________________________________________________________________
+## Step 5 - Enable the `libvirt daemon` at startup and start the service
+
+This is ensure that the service automatically loads at boot:
+```sh
+sudo systemctl enable libvirtd
+```
+
+This will start the service now:
+```sh
+sudo systemctl start libvirtd
+```
+_______________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Step 2 - Create a default network
 
 Run this command:
