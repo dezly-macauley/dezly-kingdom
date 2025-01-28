@@ -25,4 +25,9 @@ sudo pacman -S --needed hyprpolkitagent
 # like virt-manager and pavucontrol
 sudo pacman -S --needed nwg-look
 
+# A GTK theme
+# Changes the appearance of applications like 
+# `pavucontrol` and `virt-manager`
+sudo pacman -S --needed materia-gtk-theme
+
 #______________________________________________________________________________

@@ -12,10 +12,6 @@ sudo systemctl enable --now auto-cpufreq.service
 paru -S --needed hyprshot
 
 #______________________________________________________________________________
-# GTK themes
-
-
-#______________________________________________________________________________
 # Screen lock
 
 # Allows you to lock and unlock your screen
