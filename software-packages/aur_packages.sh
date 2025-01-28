@@ -14,8 +14,6 @@ paru -S --needed hyprshot
 #______________________________________________________________________________
 # GTK themes
 
-# A GTK theme for GUI applications that can be used by nwg-look
-paru -S --needed catppuccin-gtk-theme-mocha
 
 #______________________________________________________________________________
 # Screen lock
