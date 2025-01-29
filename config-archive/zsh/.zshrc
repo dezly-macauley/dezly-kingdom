@@ -30,11 +30,18 @@ alias project-one=""
 function vm_services_start() {
     sudo systemctl start libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket
     sudo systemctl start libvirtd dnsmasq iptables
+    
+    # Start the network if it hasn't started already
+    sudo virsh net-start default 2>/dev/null || true 
+
     echo "libvirt, dnsmasq, and iptables services have been started."
     echo "You can now use Virtual Machine Manager to create and run VMs"
 }
 
 function vm_services_stop() {
+    # Cleanly stop the network if it hasn't already been stopped
+    sudo virsh net-destroy default 2>/dev/null || true  
+
     sudo systemctl stop libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket
     sudo systemctl stop libvirtd dnsmasq iptables
     echo "libvirt, dnsmasq, and iptables services have been stopped."
@@ -95,6 +102,8 @@ function saga() {
 # SECTION: Screenshots
 
 export HYPRSHOT_DIR="$HOME/content-creation/screenshots"
+
+alias screenshots="cd $HYPRSHOT_DIR"
 
 #______________________________________________________________________________
 

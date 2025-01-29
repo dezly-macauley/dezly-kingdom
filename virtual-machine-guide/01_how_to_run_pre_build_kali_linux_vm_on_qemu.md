@@ -1,4 +1,4 @@
-# Virtual Machine Guide
+# How to run a pre-buit Kali Linux VM on Arch Linux (QEMU Setup)
 _______________________________________________________________________________
 ## Step 1 - Check if your system can run virtualization technology
 
@@ -389,5 +389,26 @@ I will be using this to study ethical hacking from TCM Security.
 <img src="./images/09.png" width="500" height="400" />
 
 Click `Finish`
+
+_______________________________________________________________________________
+## You should now have a working Virtual Machine
+
+<img src="./images/10.png" width="300" height="200" />
+
+_______________________________________________________________________________
+## Right click on the machine and select `run`
+
+<img src="./images/11.png" width="300" height="200" />
+
+_______________________________________________________________________________
+## Click `Open` to open the machine
+
+<img src="./images/12.png" width="300" height="200" />
+
+_______________________________________________________________________________
+You can close the virtual manchine manager window on the right 
+and just have the window with your virtual machine open.
+
+<img src="./images/13.png" width="300" height="200" />
 
 _______________________________________________________________________________
