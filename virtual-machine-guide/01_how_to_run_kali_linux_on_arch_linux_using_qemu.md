@@ -1,38 +1,56 @@
-# How to run a pre-buit Kali Linux VM on Arch Linux (QEMU Setup)
+# How to run a Kali Linux on Arch Linux, using QEMU
 _______________________________________________________________________________
 ## Step 1 - Check if your system can run virtualization technology
 
 Use this command:
 ```
-egrep -c '(vmx|svm)' /proc/cpuinfo
+grep -cE '(vmx|svm)' /proc/cpuinfo
 ```
+
+When I run this command, I get the following output:
+```
+16
+```
+
+If you get a number like `16`, that means you can run virtual machines
+on your system and that you have 16 CPU cores.
+
+_______________________________________________________________________________
+If the number is `0` then that could mean one of two things:
+
+1. That your system does not support virtualization
+2. Your system does support virtualization but you need to enable 
+it in your BIOS
+
+Switch off your system. Then turn it back on, and press `F12` to enter the
+menu.
+
+Its usually a setting that says `enable virtualization`
+
+NOTE: It's technically a UEFI these days but people still call it BIOS. 
+
+_______________________________________________________________________________
+Another command you can run to check if your system supports virtualization
+is this:
+
+```sh
+grep -m 1 -oE '(vmx|svm)' /proc/cpuinfo
+```
+
 - vmx indicates Intel's virtualization technology (VT-x).
 
 - svm indicates AMD's virtualization technology (AMD-Vi).
 
-If you get a number like `16`, that means you can run virtual machines
-on your system and that you have 16 CPU cores.
 _______________________________________________________________________________
+Or you can use this command:
 
-An alternate command is this:
 ```
 lscpu | grep -i Virtualization
 ```
 
-I get an output like this:
+I get an output like this because I'm using Intel:
 
 Virtualization:                       VT-x
-
-_______________________________________________________________________________
-
-If the number is 0 then that means that you can't run virtualization
-technology OR you can, but you need to enable it in your BIOS
-
-Its usually a setting that says `enable virtualization`
-
-NOTE: It's technically a UEFI but in people still call it BIOS. 
-It's that menu that you get when you laptop is starting and you press F12.
-
 _______________________________________________________________________________
 ## Step 2 - Install the packages needed for working with Virtual Machines
 
@@ -248,20 +266,29 @@ _______________________________________________________________________________
 sudo virsh net-autostart default
 ```
 _______________________________________________________________________________
+## Step 7 - Ensure that dnsmasq is active and automatically loaded at boot
+
+Without this you will have problems connecting your virtual machine to the
+internet when you try to install Kali Linux on the virtual machine.
+
+```sh
+sudo systemctl enable dnsmasq
+```
+_______________________________________________________________________________
+
 ### Reboot your system
 _______________________________________________________________________________
-## Step 8 - Download a pre-built Kali Linux Virtual Machine
+## Step 8 - Download a Kali Linux installer image
 
 Go to this link:
 ```
-https://www.kali.org/get-kali/#kali-virtual-machines
+https://www.kali.org/get-kali/#kali-installer-images
 ```
 
-Download the `QEMU` one
 
 It will look something like this:
 ```
-https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-qemu-amd64.7z
+kali-linux-2024.4-installer-amd64.iso
 ```
 _______________________________________________________________________________
 ## Step 9 - Create a `virtual-machines` directory in your home directory
@@ -275,27 +302,8 @@ And put the downloaded file inside the `virtual-machines` directory
 ```bash
 ~/virtual-machines
 ❯ ls
-kali-linux-2024.4-qemu-amd64.7z
+kali-linux-2024.4-installer-amd64.iso
 ```
-
-_______________________________________________________________________________
-Since this is a pre-built virtual machine, 
-you'll want to extract the archive using a tool like `7z`
-
-```sh
-cd virtual-machines
-7z x kali-linux-2024.4-qemu-amd64.7z
-```
-
-After doing that you should have a `.qcow2` file
-
-```
-kali-linux-2024.4-qemu-amd64.7z
-kali-linux-2024.4-qemu-amd64.qcow2
-```
-
-You can delete the `.7z` file
-
 _______________________________________________________________________________
 ## Step 10 - Open the `Virtual Machine Manager` program
 
@@ -314,7 +322,7 @@ _______________________________________________________________________________
 
 Click `File`, then click `New Virtual Machine`
 
-Then select the option `Import existing disk image`
+Then select the option `Local install media (ISO image or CDROM)`
 
 <img src="./images/02.png" width="500" height="400" />
 
@@ -344,28 +352,36 @@ Click `Finish`
 
 _______________________________________________________________________________
 
-You should see the `virtual-machines` directory and your
-pre-built kali-linux machine listed under `Volumes`
+You should see the `virtual-machines` directory and your 
+kali-linux iso image listed under `Volumes`
 
 <img src="./images/06.png" width="500" height="400" />
 
-Click the kali-linux machine and then click `Choose Volume`
+Click the kali-linux iso and then click `Choose Volume`
 
 _______________________________________________________________________________
 You will be taken back to this menuu
 
-Where it says `choose the operating system you are installing`
+<img src="./images/07.png" width="500" height="400" />
 
-You will notice that if you search for `Kali Linux` nothing will show up.
+You will notice that Where it says 
+`choose the operating system you are installing`...
+
+The option `Automatically detect from the installation media / source` 
+is checked, but Virtual Machine Manager has failed to dectect Kali.
+_______________________________________________________________________________
 
 Most VM emulators will fail to automatically detect Kali because Kali Linux,
 because Kali is actually a spin-off / fork of Linux distro called `Debian`.
 
 To be even more specific, Kali Linux is based of the `testing` branch of Debian
 
-So select `Debian testing`
+So this is what you need to do:
+1. Uncheck the option that reads 
+`Automatically detect from the installation media / source`.
+2. Search and select `Debian testing`
 
-<img src="./images/07.png" width="500" height="400" />
+<img src="./images/08.png" width="500" height="400" />
 
 Then click `Forward`
 
@@ -375,40 +391,77 @@ I use this for memory and CPU settings:
 - Memory: 3072 Mib
 - CPUs:   2 CPU
 
-<img src="./images/08.png" width="500" height="400" />
+<img src="./images/09.png" width="500" height="400" />
 
 Click `Forward`
 
 _______________________________________________________________________________
+Select the following options and click `Manage`
 
-Rename the virtual machine. 
+<img src="./images/10.png" width="500" height="400" />
+Click `Finish`
 
-I call mine `kali-linux-tcm-sec` as 
-I will be using this to study ethical hacking from TCM Security.
+_______________________________________________________________________________
+Now click the `+` button that is next to `Volumes`
 
-<img src="./images/09.png" width="500" height="400" />
+It should say `Create new volume`
+
+<img src="./images/11.png" width="500" height="400" />
+
+_______________________________________________________________________________
+The Kali Docs recommend `60 GB` 
+
+https://www.kali.org/docs/installation/installation-sizes/
+
+<img src="./images/12.png" width="500" height="400" />
 
 Click `Finish`
 
 _______________________________________________________________________________
-## You should now have a working Virtual Machine
+You should now have a `.qcow2` volume listed.
 
-<img src="./images/10.png" width="300" height="200" />
+This is the actual virtual machine. 
 
-_______________________________________________________________________________
-## Right click on the machine and select `run`
+But it is currently empty, with a max size of 60 GB.
 
-<img src="./images/11.png" width="300" height="200" />
+<img src="./images/13.png" width="500" height="400" />
 
-_______________________________________________________________________________
-## Click `Open` to open the machine
-
-<img src="./images/12.png" width="300" height="200" />
+Make sure you select the .`qcow2` image (NOT the ISO!!!) and then click
+`Choose Volume`
 
 _______________________________________________________________________________
-You can close the virtual manchine manager window on the right 
-and just have the window with your virtual machine open.
+You will be taken back to this menu:
 
-<img src="./images/13.png" width="300" height="200" />
+<img src="./images/14.png" width="500" height="400" />
+
+Click `Forward`
+
+_______________________________________________________________________________
+Give you virtual manchine the same name 
+as the storage volume to avoid confusion.
+
+<img src="./images/15.png" width="500" height="400" />
+
+Click `Finish`
+
+_______________________________________________________________________________
+## Step 12 - Install Kali Linux
+_______________________________________________________________________________
+
+Select your language and press `continue`
+
+<img src="./images/16.png" width="500" height="400" />
+
+_______________________________________________________________________________
+
+Select your location and press `continue`
+
+<img src="./images/17.png" width="500" height="400" />
+
+_______________________________________________________________________________
+
+Select your keyboard and press `continue`
+
+<img src="./images/18.png" width="500" height="400" />
 
 _______________________________________________________________________________
