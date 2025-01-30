@@ -1,5 +1,17 @@
 #!/bin/sh
-echo "Setting up Rust" 
+
+echo "________________________________________________________________________"
+echo "Loading: rust_setup.sh" 
+
+# Basic tools to build Arch Linux packages
+# Includes essential tools like `make`, `binutils`, 
+# and other utilities often required when compiling Rust packages 
+# with C dependencies
+sudo pacman -S --needed base-devel
+
+# Linker and C compiler
+sudo pacman -S --needed gcc
+sudo pacman -S --needed clang
 
 # Install the Rust toolchain
 sudo pacman -S --needed rustup
@@ -34,3 +46,4 @@ cargo install cargo-valgrind
 
 # Install the language support for Rust
 sudo pacman -S --needed rust-analyzer
+echo "________________________________________________________________________"

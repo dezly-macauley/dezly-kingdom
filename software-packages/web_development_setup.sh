@@ -1,5 +1,22 @@
 #!/bin/sh
 
+echo "________________________________________________________________________"
+echo "Installing / Updating Web Development Setup:"
+
+#______________________________________________________________________________
+# SUB_SECTION: User Interface
+
+# Language support for HTML
+sudo pacman -S --needed vscode-html-languageserver
+
+# Language support for CSS 
+sudo pacman -S --needed vscode-css-languageserver
+
+# Language support for Tailwind CSS
+sudo pacman -S --needed tailwindcss-language-server
+#______________________________________________________________________________
+# SUB_SECTION: JavaScript Ecosystem
+#
 # The JavaScript Runtime
 sudo pacman -S --needed nodejs
 
@@ -39,5 +56,12 @@ fi
 # This is also required by `svelte-language-server`
 sudo pacman -S --needed typescript
 
+# This provides language support for not only TypeScript files (.ts),
+# but for TypeScript-React file (.tsx), 
+# JavaScript files (.js), and JavaScript-React files (.jsx)
+sudo pacman -S --needed typescript-language-server
+
 # The language server for Svelte 
 sudo pacman -S --needed svelte-language-server
+
+echo "________________________________________________________________________"

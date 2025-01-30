@@ -35,8 +35,7 @@ echo "Welcome to the Dezly Kingdom Installer"
 ./software-packages/python_setup.sh
 ./software-packages/lua_setup.sh
 
-./software-packages/html_and_css_setup.sh
-./software-packages/javascript_ecosystem_setup.sh
+./software-packages/web_development_setup.sh
 
 #______________________________________________________________________________
 # SECTION: Core Essentials
