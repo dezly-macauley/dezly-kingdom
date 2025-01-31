@@ -55,6 +55,7 @@ function saga() {
     # Root directories
     local saga_root="$HOME/dezly-saga"
     local se_root="$saga_root/software-engineering"                            
+    local postgresql_root="$se_root/postgresql"
     local react_root="$se_root/react"
     local rust_root="$se_root/rust"
     local sqlite_root="$se_root/sqlite"
@@ -63,6 +64,7 @@ function saga() {
     local zig_root="$se_root/zig"
 
     # Checkpoints
+    local postgresql="$postgresql_root/af-mastering-postgres"
     local rust="$rust_root/the-rust-programming-language/src/bin"
     local react="$react_root/react-dev-tutorial"
     local sqlite="$sqlite_root/af-high-performance-sqlite"
@@ -76,6 +78,7 @@ function saga() {
         cd $saga_root
     else
         case $1 in
+	    --postgresql) cd $postgresql && nvim . ;;
 	    --react) cd $react && nvim . ;;
 	    --rust) cd $rust && nvim . ;;
 	    --sqlite) cd $sqlite && nvim . ;;
@@ -89,6 +92,7 @@ function saga() {
 		________________________________________
 		[ Software Engineering ]
 	
+		saga --postgresql
 		saga --react
 		saga --rust
 		saga --sqlite
