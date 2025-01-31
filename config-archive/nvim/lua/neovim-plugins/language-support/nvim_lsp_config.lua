@@ -78,13 +78,13 @@ return {
 
 
 	    -------------------------------------------------------------------
-	    -- SECTION: Front-End Development
+	    -- SECTION: Web Development
 
-		-- TypeScript
-		lsp.denols.setup({
+		-- TypeScript / JavaScript, React
+		lsp.ts_ls.setup({
 		    capabilities = blink_cmp
 		})
-
+		--
 		-- Svelte
 		lsp.svelte.setup({
 		    capabilities = blink_cmp

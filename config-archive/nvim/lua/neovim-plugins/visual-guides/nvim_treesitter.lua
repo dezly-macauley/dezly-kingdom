@@ -32,6 +32,7 @@ return {
 		    -------------------------------------------------------
 		    -- Web Development 
 
+		    "tsx",
 		    "htmldjango",
 		    "svelte",
 

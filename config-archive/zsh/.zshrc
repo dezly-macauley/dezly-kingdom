@@ -55,16 +55,18 @@ function saga() {
     # Root directories
     local saga_root="$HOME/dezly-saga"
     local se_root="$saga_root/software-engineering"                            
+    local react_root="$se_root/react"
     local rust_root="$se_root/rust"
     local sqlite_root="$se_root/sqlite"
-    local sveltekit_root="$se_root/sveltekit"
+    local svelte_root="$se_root/svelte"
     local vyper_root="$se_root/vyper"
     local zig_root="$se_root/zig"
 
     # Checkpoints
-    local rust="$rust_root/rust-by-example/src/bin"
+    local rust="$rust_root/the-rust-programming-language/src/bin"
+    local react="$react_root/react-dev-tutorial"
     local sqlite="$sqlite_root/af-high-performance-sqlite"
-    local sveltekit="$sveltekit_root/svelte-dev-tutorial"
+    local svelte="$svelte_root/svelte-dev-tutorial"
     local vyper="$vyper_root/cu-intermediate-py-vy/section-4-mox-favs"
     local zig="$zig_root/zig-guide/02-language"
     
@@ -74,9 +76,10 @@ function saga() {
         cd $saga_root
     else
         case $1 in
+	    --react) cd $react && nvim . ;;
 	    --rust) cd $rust && nvim . ;;
 	    --sqlite) cd $sqlite && nvim . ;;
-	    --sveltekit) cd $sveltekit && nvim . ;;
+	    --svelte) cd $svelte && nvim . ;;
 	    --vyper) cd $vyper && nvim . ;;
 	    --zig) cd $zig && nvim . ;;
             *) 
@@ -86,9 +89,10 @@ function saga() {
 		________________________________________
 		[ Software Engineering ]
 	
+		saga --react
 		saga --rust
 		saga --sqlite
-		saga --sveltekit
+		saga --svelte
 		saga --vyper
 		saga --zig
 		________________________________________
