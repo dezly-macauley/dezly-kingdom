@@ -99,3 +99,15 @@ To unistall a program that was installed by Paru (I.e. An AUR package):
 paru -Rns name-of-package
 ```
 _______________________________________________________________________________
+#### To see what tools you have installed wih uv:
+```
+uv tool list
+```
+_______________________________________________________________________________
+#### To unistall a tool that was installed with uv:
+
+```
+uv tool unistall name-of-tool
+```
+
+_______________________________________________________________________________
