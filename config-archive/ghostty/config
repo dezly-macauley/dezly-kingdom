@@ -13,6 +13,9 @@ theme = "Firefly Traditional"
 # Hide the mouse while typing
 mouse-hide-while-typing = true
 
+selection-background = #610079
+selection-foreground = #ffffff
+
 # NOTE: Alt + [n] = [n]ext tab
 keybind = alt+n=next_tab
 
